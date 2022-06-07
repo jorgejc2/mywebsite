@@ -40,8 +40,15 @@
 
 .toolbar #github-logo {
     height: 50px;
-    margin: 0, 16px;
+    margin: 0, 8px;
     margin-top: 25px;
+    margin-right: -20px;
+}
+
+.toolbar #linkedin-logo {
+    height: 70px;
+    margin: 0, 16px;
+    margin-top: 38px;
 }
 
 .starting_message{
