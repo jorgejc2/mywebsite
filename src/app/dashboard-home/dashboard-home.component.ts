@@ -7,24 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardHomeComponent implements OnInit {
 
+  events: any[] = [];
   constructor() {
-    // delay(10000);
-    // var fade_animation = document.querySelector('.starting_screen');
-    // fade_animation.setAttribute("style", "-webkit-animation: fadeout 5s;")
-    // fade_animation.setAttribute("style", "-moz-animation: fadeout 5s;")
-    // fade_animation.setAttribute("style", "-ms-animation: fadeout 5s;")
-    // fade_animation.setAttribute("style", "-o-animation: fadeout 5s;")
-    // fade_animation.setAttribute("style", "animation: fadeout 5s;")
+   
    }
 
-  ngOnInit(): void {
-  //   delay(10);
-  //   var fade_animation = document.querySelector('.starting_screen');
-  //   fade_animation.setAttribute("style", "-webkit-animation: fadeout 5s;")
-  //   fade_animation.setAttribute("style", "-moz-animation: fadeout 5s;")
-  //   fade_animation.setAttribute("style", "-ms-animation: fadeout 5s;")
-  //   fade_animation.setAttribute("style", "-o-animation: fadeout 5s;")
-  //   fade_animation.setAttribute("style", "animation: fadeout 5s;")
+  async ngOnInit(): Promise<void> {
+    this.events = [
+      {content: 'Ordered', date: '15/02/2021 10:30', status: 'R'},
+      {content: 'Processing', date: '15/02/2021 14:00', status: 'R'},
+      {content: 'Shipped'},
+      {content: 'Delivered'}
+    ]
+    await new Promise( resolve => setTimeout(resolve, 5000));
+    console.log("delay finished")
+    this.events[0]['status'] = ''
   }
 
 }
