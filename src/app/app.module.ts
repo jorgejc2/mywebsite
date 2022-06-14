@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
 import { DashboardTimelineComponent } from './dashboard-home/dashboard-timeline/dashboard-timeline.component';
+import { DashboardHomeMainDescriptionComponent } from './dashboard-home-main-description/dashboard-home-main-description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardHomeComponent,
-    DashboardTimelineComponent
+    DashboardTimelineComponent,
+    DashboardHomeMainDescriptionComponent
   ],
   imports: [
     BrowserModule

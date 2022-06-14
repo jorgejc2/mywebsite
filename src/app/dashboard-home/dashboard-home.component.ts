@@ -17,7 +17,10 @@ export class DashboardHomeComponent implements OnInit {
       {content: 'Ordered', date: '15/02/2021 10:30', status: 'R'},
       {content: 'Processing', date: '15/02/2021 14:00', status: 'R'},
       {content: 'Shipped'},
-      {content: 'Delivered'}
+      {content: 'Delivered'},
+      {content: 'Ordered', date: '15/02/2021 10:30', status: 'R'},
+      {content: 'Processing', date: '15/02/2021 14:00', status: 'R'},
+      {content: 'Shipped'}
     ]
     await new Promise( resolve => setTimeout(resolve, 5000));
     console.log("delay finished")

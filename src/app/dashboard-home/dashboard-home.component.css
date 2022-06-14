@@ -1,19 +1,23 @@
-.starting_screen{
+/* .starting_screen{
     width: 95vw;
     height: 95vh;
-    /* width: 90%;
-    height: 90%; */
     position: relative;
     border-style: solid;
     border-width: 3px;
     margin: auto;
     background: pink;
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 5s; /* Firefox < 16 */
-        -ms-animation: fadein 5s; /* Internet Explorer */
-         -o-animation: fadein 5s; /* Opera < 12.1 */
+    -webkit-animation: fadein 5s; 
+       -moz-animation: fadein 5s; 
+        -ms-animation: fadein 5s; 
+         -o-animation: fadein 5s; 
             animation: fadein 5s;
 
+} */
+.main {
+    position: relative;
+     width: 100vw;
+    height: 100vh; 
+    overflow-x: hidden;
 }
 
 .toolbar{
@@ -22,11 +26,16 @@
     left: 0;
     right: 0;
     height: 60px;
+    /* max-height: 60px;
+    min-height: 60px;
+    height: 5%; */
     display: flex;
     align-items: center;
     background-color: #1976d2;
     color: white;
-    font-weight: 600;;
+    font-weight: 600;
+    /* max-width: 100%; */
+    /* overflow-x: hidden; */
 }
 
 .toolbar img {
