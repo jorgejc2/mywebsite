@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular'
 
 import { AppComponent } from './app.component';
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
@@ -14,7 +15,8 @@ import { DashboardHomeMainDescriptionComponent } from './dashboard-home-main-des
     DashboardHomeMainDescriptionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
