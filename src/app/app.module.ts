@@ -16,7 +16,7 @@ import { DashboardHomeMainDescriptionComponent } from './dashboard-home-main-des
   ],
   imports: [
     BrowserModule,
-    SwiperModule
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

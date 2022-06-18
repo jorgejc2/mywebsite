@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import SwiperCore, { Navigation, Pagination, SwiperOptions } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Parallax, SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.css';
+import { NONE_TYPE } from '@angular/compiler';
+import Swiper from 'swiper/bundle';
 
 @Component({
   selector: 'app-dashboard-home-main-description',
@@ -13,19 +15,45 @@ import 'swiper/swiper-bundle.css';
 export class DashboardHomeMainDescriptionComponent implements OnInit {
 
   config: SwiperOptions = {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    navigation: true,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
+    // slidesPerView: 1,
+    // spaceBetween: 50,
+    // navigation: true,
+    // pagination: { clickable: true },
+    // scrollbar: { draggable: true },
+    speed: 600,
+    parallax: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   };
+
 
   @ViewChild('newSwiper') newSwiper: any;
 
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {SwiperCore.use([Navigation, Pagination])}
+  }
+
+  ngOnInit(): void {SwiperCore.use([Navigation, Pagination, Parallax])
+    const swiper = new Swiper(".mySwiper", {
+      speed: 600,
+      parallax: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    }); 
+  }
 
   ngAfterViewInit(): void {
     console.log(this.newSwiper.swiperRef);
@@ -39,6 +67,22 @@ export class DashboardHomeMainDescriptionComponent implements OnInit {
     console.log('slide change');
   }
 
+  // declare var swiper = new Swiper(".mySwiper", {
+  //   speed: 600,
+  //   parallax: true,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  // });
+
+  
+
   
 
 }
+
