@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
 import { DashboardTimelineComponent } from './dashboard-home/dashboard-timeline/dashboard-timeline.component';
 import { DashboardHomeMainDescriptionComponent } from './dashboard-home-main-description/dashboard-home-main-description.component';
+import { ImgDimDirective } from './img-dim.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardHomeComponent,
     DashboardTimelineComponent,
-    DashboardHomeMainDescriptionComponent
+    DashboardHomeMainDescriptionComponent,
+    ImgDimDirective
   ],
   imports: [
     BrowserModule,

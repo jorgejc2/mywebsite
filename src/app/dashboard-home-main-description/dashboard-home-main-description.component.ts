@@ -5,6 +5,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.css';
 import { NONE_TYPE } from '@angular/compiler';
 import Swiper from 'swiper/bundle';
+import ScrollReveal from 'scrollreveal';
 
 @Component({
   selector: 'app-dashboard-home-main-description',
@@ -32,6 +33,8 @@ export class DashboardHomeMainDescriptionComponent implements OnInit {
     },
   };
 
+  scroll: ScrollReveal;
+
 
   @ViewChild('newSwiper') newSwiper: any;
 
@@ -53,6 +56,20 @@ export class DashboardHomeMainDescriptionComponent implements OnInit {
         prevEl: ".swiper-button-prev",
       },
     }); 
+    // this.scroll = new ScrollReveal(
+    //   {
+    //   reset: true,
+    //   distance: '60px',
+    //   duration: 2500, 
+    //   delay: 400
+    // });
+    // console.log("scroller: " + this.scroll)
+    // console.log(this.scroll.reveal)
+    // this.scroll.reveal('.home-description-items', {
+    //   // reset: true,
+    //   distance: '60px',
+    //   duration: 2500, 
+    //   delay: 400, origin: 'left'});
   }
 
   ngAfterViewInit(): void {

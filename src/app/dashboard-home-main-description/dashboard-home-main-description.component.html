@@ -1,5 +1,60 @@
+<script src="https://unpkg.com/scrollreveal"></script>
+<div class="swiper_div">
+  <div 
+  style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+  class="swiper mySwiper"
+>
+<!-- prev style was: style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" -->
+  <div
+    class="parallax-bg"
+    style="
+      background-image: url(../../assets/me_and_mika_chicago.jpg);
+      filter: brightness(60%);
+    "
+    data-swiper-parallax="-23%"
+  ></div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="title" data-swiper-parallax="-300">Slide 1</div>
+      <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p style="font-size: 4rem;">
+          Hello, my name is Jorge Chavez !!
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="title" data-swiper-parallax="-300">Slide 2</div>
+      <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p style="font-size: 2rem;">
+          I'm currently a Computer Engineer at the University of Illinois and this website
+          is just an outlet for me to share some of the things I've done and experienced
+          during these past few years.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="title" data-swiper-parallax="-300">Slide 3</div>
+      <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p style="font-size: 1.8rem;">
+          This photo was taken in Chicago during my spring break of 2022. To my right is my girlfriend Mika!
+          The river is green because of St. Patrick's Day, but if anyone is good at photoshop then feel to 
+          make the river whatever you want :-)
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+  <div class="pagination-background"></div>
+</div>
+</div>
+
 <div class="home-description">
-  <div class="home-description-col-one">
+  <div class="home-description-col-one home-description-items">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu diam quis nisl luctus malesuada. Nam fringilla quis diam tincidunt eleifend. Suspendisse suscipit tellus sed dui dictum aliquam. Phasellus vehicula ligula id lectus mollis condimentum. Sed finibus mattis metus, quis pulvinar nisi porttitor quis. Aenean feugiat viverra finibus. Nulla volutpat lectus at tortor lobortis, nec accumsan massa ornare. Phasellus laoreet, metus et iaculis porta, est sapien commodo odio, ac lacinia risus metus non quam. Etiam suscipit ultricies diam a semper. Nulla fringilla dapibus ex, vulputate iaculis neque hendrerit vitae. Sed efficitur in diam non congue.
       </p>
     <p>Fusce quis urna id risus maximus egestas non maximus eros. In hac habitasse platea dictumst. Vestibulum nec tempus ipsum, ac hendrerit nulla. Sed placerat ultrices leo, vitae maximus elit porta sed. Aenean ac odio ac lacus venenatis laoreet vel a diam. Donec et nulla et tortor sagittis ornare sit amet sed massa. Vestibulum non metus eu est tempus ultricies at sit amet tellus. Aenean velit tellus, luctus sed leo vitae, aliquet consequat odio. Proin dictum, est et dapibus tempus, nulla nibh porta dui, vel tincidunt libero ex quis nibh. Etiam non arcu rhoncus, fringilla sem ut, feugiat elit. Suspendisse in accumsan massa.
@@ -11,10 +66,10 @@
     <p>Praesent ultrices purus nec aliquam blandit. Curabitur justo eros, dignissim id iaculis a, ornare eget massa. Quisque mollis tincidunt rutrum. Nulla odio ligula, porttitor vel dignissim nec, vestibulum non lacus. Sed eleifend pulvinar urna at ullamcorper. Quisque elit massa, sodales nec pharetra sed, vestibulum non elit. Nulla dapibus aliquet magna id facilisis. Fusce eget elementum orci, et facilisis lacus. Nunc dapibus tincidunt fermentum. Sed mattis leo vitae volutpat congue. Vestibulum gravida mi justo. Integer eu tortor tortor. Etiam vel augue augue.
     </p>
     </div>
-  <div class="home-description-col-two">Placing Image Here</div>
-  <div class="home-description-col-three">
+  <div class="home-description-col-two home-description-items">Placing Image Here</div>
+  <!-- <div class="home-description-col-three">
 
-    <!-- <swiper [navigation]="true" class="mySwiper" style="position:relative; top:0px; left:0px;">
+    <swiper [navigation]="true" class="mySwiper" style="position:relative; top:0px; left:0px;">
       <ng-template swiperSlide><img src="../../assets/desc1.jpg" alt="home pic one"></ng-template
       ><ng-template swiperSlide><img src="../../assets/desc2.jpg" alt="home pic two"></ng-template
       ><ng-template swiperSlide><img src="../../assets/desc3.jpg" alt="home pic three"></ng-template
@@ -24,61 +79,32 @@
       ><ng-template swiperSlide><img src="../../assets/desc7.jpeg" alt="home pic seven"></ng-template
       ><ng-template swiperSlide><img src="../../assets/desc8.jpg" alt="home pic eight"></ng-template
       ><ng-template swiperSlide><img src="../../assets/desc8.jpg" alt="home pic nine"></ng-template>
-    </swiper> -->
-  </div>
+    </swiper>
+  </div> -->
+  <div class="home-description-items">3rd place holder</div>
+  <div class="home-description-items">4th place holder</div>
 
 </div>
-  <!-- <swiper [config]="config"> -->
-    <div class="swiper_div">
-    <div 
-    style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-    class="swiper mySwiper"
-  >
-  <!-- prev style was: style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" -->
-    <div
-      class="parallax-bg"
-      style="
-        background-image: url(../../assets/me_and_mika_chicago.jpg);
-        filter: brightness(60%);
-      "
-      data-swiper-parallax="-23%"
-    ></div>
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="title" data-swiper-parallax="-300">Slide 1</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-        <div class="text" data-swiper-parallax="-100">
-          <p style="font-size: 4rem;">
-            Hello, my name is Jorge Chavez !!
-          </p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="title" data-swiper-parallax="-300">Slide 2</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-        <div class="text" data-swiper-parallax="-100">
-          <p style="font-size: 2rem;">
-            I'm currently a Computer Engineer at the University of Illinois and this website
-            is just an outlet for me to share some of the things I've done and experienced
-            during these past few years.
-          </p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-        <div class="text" data-swiper-parallax="-100">
-          <p style="font-size: 1.8rem;">
-            This photo was taken in Chicago during my spring break of 2022. To my right is my girlfriend Mika!
-            The river is green because of St. Patrick's Day, but if anyone is good at photoshop then feel to 
-            make the river whatever you want :-)
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+
+<div class="pixel_game">
+  <img src="../../assets/pixelsunset1.jpg" appImgDim>
+  <div class="rand_text">Hello world</div>
 </div>
-<!-- </swiper> -->
+
+<script>
+  ScrollReveal(
+      {
+      reset: true,
+      distance: '60px',
+      duration: 2500, 
+      delay: 400
+    });
+
+    ScrollReveal().reveal('.home-description', {
+      reset: true,
+      distance: '60px',
+      duration: 2500, 
+      delay: 400, origin: 'left'});
+
+</script>
+    
