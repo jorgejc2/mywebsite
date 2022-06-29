@@ -25,7 +25,7 @@ export class DashboardHomeComponent implements OnInit {
 
 
 
-  @ViewChild('newSwiper') newSwiper: any;
+  // @ViewChild('newSwiper') newSwiper: any;
 
   constructor() {
    
@@ -48,17 +48,17 @@ export class DashboardHomeComponent implements OnInit {
 
   }
 
-  ngAfterViewInit(): void {
-    console.log(this.newSwiper.swiperRef);
-    //Swiper instance will be displayed in console
-  }
+  // ngAfterViewInit(): void {
+  //   console.log(this.newSwiper.swiperRef);
+  //   //Swiper instance will be displayed in console
+  // }
 
-  onSwiper([swiper]) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
-  }
+  // onSwiper([swiper]) {
+  //   console.log(swiper);
+  // }
+  // onSlideChange() {
+  //   console.log('slide change');
+  // }
 
 }
 
