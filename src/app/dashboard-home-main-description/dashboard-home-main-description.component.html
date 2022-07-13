@@ -1,10 +1,10 @@
-<div class="swiper_div">
+<!-- <div class="swiper_div">
   <div 
   style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
   class="swiper mySwiper"
->
+> -->
 <!-- prev style was: style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" -->
-  <div
+  <!-- <div
     class="parallax-bg"
     style="
       background-image: url(../../assets/me_and_mika_chicago.jpg);
@@ -50,18 +50,32 @@
   <div class="swiper-pagination"></div>
   <div class="pagination-background"></div>
 </div>
-</div>
+</div> -->
 
 <div class="home-description">
-  <div class="home-description-col-one home-description-items" [ngsReveal]="{ reset: true, delay: 300, origin: 'left', distance: '60px'}">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu diam quis nisl luctus malesuada. Nam fringilla quis diam tincidunt eleifend. Suspendisse suscipit tellus sed dui dictum aliquam. Phasellus vehicula ligula id lectus mollis condimentum. Sed finibus mattis metus, quis pulvinar nisi porttitor quis. Aenean feugiat viverra finibus. Nulla volutpat lectus at tortor lobortis, nec accumsan massa ornare. Phasellus laoreet, metus et iaculis porta, est sapien commodo odio, ac lacinia risus metus non quam. Etiam suscipit ultricies diam a semper. Nulla fringilla dapibus ex, vulputate iaculis neque hendrerit vitae. Sed efficitur in diam non congue.
-      </p>
-    <p>Fusce quis urna id risus maximus egestas non maximus eros. In hac habitasse platea dictumst. Vestibulum nec tempus ipsum, ac hendrerit nulla. Sed placerat ultrices leo, vitae maximus elit porta sed. Aenean ac odio ac lacus venenatis laoreet vel a diam. Donec et nulla et tortor sagittis ornare sit amet sed massa. Vestibulum non metus eu est tempus ultricies at sit amet tellus. Aenean velit tellus, luctus sed leo vitae, aliquet consequat odio. Proin dictum, est et dapibus tempus, nulla nibh porta dui, vel tincidunt libero ex quis nibh. Etiam non arcu rhoncus, fringilla sem ut, feugiat elit. Suspendisse in accumsan massa.
-    </p>
-    <p>Phasellus in tellus odio. Nulla pretium, dolor nec pretium interdum, eros tortor vestibulum lorem, sit amet laoreet diam metus at libero. Integer laoreet risus ipsum, sed varius erat fermentum vel. Nam congue in lorem non ultrices. Proin mollis bibendum nisl tempor sodales. Phasellus ac euismod nisl. In hac habitasse platea dictumst. Duis in maximus mauris, at volutpat velit. Ut at est vitae neque scelerisque iaculis. Etiam placerat nibh nec mauris aliquam, non feugiat nisl molestie. Maecenas vestibulum erat quis nulla feugiat consequat.
-    </p>
+  <div class="left-home-description">
+    <div class="hello-world" [ngsReveal]="{ reset: true, delay: 50, origin: 'left', distance: '500px'}">
+      <p>Hello World!</p>
     </div>
-  <div class="home-description-col-two home-description-items" [ngsReveal]="{ reset: true, delay: 300, origin: 'left', distance: '60px'}">Placing Image Here</div>
+    <div class="home-description-main" [ngsReveal]="{ reset: true, delay: 200, origin: 'left', distance: '500px'}">
+      <p class="main-text">I am currently studying computer engineering at the University of Illinois. My focus is on FPGA board design and I hope to one day work on processors in the future, but as of now I am exploring different technologies as I progress through my educational career.  I have full stack development skills which I’ve gained from Motorola Solutions, and have developed this website in Angular to enhance those skills further.  I have also focused a lot of my time on digitial signal processing and have helped create a  “Learning Node” for a radio device for Motorola Solutions. A description of my projects and educational experiences can be found below. 
+      </p>
+      <p class="main-text">My motivation for putting this website together is to refine my front end development skills as 
+        well as bring forth to everyone an in depth portfolio describing who I am and what I have
+        accomplished in college. It also serves as a creative outlet to share my experiences and
+        introduce projects that others will hopefully find interesting and even helpful on their
+        programming endeavors.
+      </p>
+      <p class="star-text">*This background image is actually a view I had from my sophomore year in the ISR dorms on
+        campus. It was relaxing working at my desk and watching the sunset every night :-)
+      </p> 
+    </div>
+  </div>
+  <div class="right-home-description" [ngsReveal]="{ reset: true, delay: 20, origin: 'right', distance: '500px'}">
+    <img class="main-profile" src="../../assets/desc7.jpeg">
+    <div class="profile-shadow"></div>
+  </div>
+  <!-- <div class="home-description-col-two home-description-items" [ngsReveal]="{ reset: true, delay: 300, origin: 'left', distance: '60px'}">Placing Image Here</div> -->
   <!-- <div class="home-description-col-three">
 
     <swiper [navigation]="true" class="mySwiper" style="position:relative; top:0px; left:0px;">
@@ -76,12 +90,15 @@
       ><ng-template swiperSlide><img src="../../assets/desc8.jpg" alt="home pic nine"></ng-template>
     </swiper>
   </div> -->
-  <div class="home-description-items item3" [ngsReveal]="{ reset: true, origin: 'left', distance: '60px'}">3rd place holder</div>
-  <div class="home-description-items item4" [ngsReveal]="{ reset: true, origin: 'left', distance: '60px'}">4th place holder</div>
+
 
 </div>
 
-<div class="pixel_game" >
+<div class="about-me">
+
+</div>
+
+<!-- <div class="pixel_game" >
   <img src="../../assets/pixelsunset1.jpg" appImgDim>
   <div class="rand_text">Hello world</div>
-</div>
+</div> -->

@@ -10,6 +10,8 @@ import { DashboardHomeMainDescriptionComponent } from './dashboard-home-main-des
 import { ImgDimDirective } from './img-dim.directive';
 import {NgsRevealModule} from 'ngx-scrollreveal';
 import { ObserveVisibilityDirective } from './observe-visibility.directive';
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { WelcomeSequenceComponent } from './welcome-sequence/welcome-sequence.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ObserveVisibilityDirective } from './observe-visibility.directive';
     DashboardTimelineComponent,
     DashboardHomeMainDescriptionComponent,
     ImgDimDirective,
-    ObserveVisibilityDirective
+    ObserveVisibilityDirective,
+    DashboardHeaderComponent,
+    WelcomeSequenceComponent
   ],
   imports: [
     BrowserModule,

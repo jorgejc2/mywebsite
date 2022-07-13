@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { trigger, state, transition, style, animate } from '@angular/animations';
 import SwiperCore, { Navigation, Pagination, Parallax, SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
 import 'swiper/swiper.min.css';
@@ -10,6 +11,15 @@ import ScrollReveal from 'scrollreveal';
   selector: 'app-dashboard-home-main-description',
   templateUrl: './dashboard-home-main-description.component.html',
   styleUrls: ['./dashboard-home-main-description.component.scss'],
+  animations: [trigger('fade', [
+
+    state('void', style({ opacity: 0 })),
+
+    transition('void <=> *', [
+      animate(200),
+    ]),
+
+  ])],
   encapsulation: ViewEncapsulation.None,
 })
 
@@ -33,48 +43,9 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     },
   };
 
-  scroll: ScrollReveal;
-  numSteps = 20.0;
-  boxElement;
-  prevRatio = 0.0;
-  increasingColor: string = "rgba(40, 40, 190, ratio)";
-  decreasingColor: string = "rgba(190, 40, 40, ratio)";
-  private observer: IntersectionObserver | undefined;
-  // observer: any;
+  descExists: boolean = false;
 
-
-  // @ViewChild('newSwiper') newSwiper: any;
-
-  createObserver(){
-
-    let options = {
-      root: null, 
-      rootMargin: "0px",
-      threshold: 1.0
-    };
-
-    this.observer = new IntersectionObserver(this.handleIntersect, options);
-    this.observer.observe(this.boxElement);
-  }
-
-  handleIntersect(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio > this.prevRatio) {
-        entry.target.style.backgroundColor = "rbga(40, 40, 190, ratio)";
-        console.log("In view");
-      } else {
-        entry.target.style.backgroundColor = "rgba(190, 40, 40, ratio)";
-        console.log("Out view");
-      }
-  
-      this.prevRatio = entry.intersectionRatio;
-    });
-  }
-
-
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
     // SwiperCore.use([Navigation, Pagination, Parallax])
@@ -90,60 +61,17 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         prevEl: ".swiper-button-prev",
       },
     }); 
-    // this.scroll = new ScrollReveal();
-    // console.log(this.scroll)
-    // this.scroll.reveal('.home-description-items',
-    // {
-    //   reset: true,
-    //   distance: '60px',
-    //   duration: 2500, 
-    //   delay: 400
-    // },);
-    // let options = {
-    //   root: null,
-    //   rootMargin: '0px',
-    //   threshold: 1.0
-    // }
-    // const observer = new IntersectionObserver(this.callback, options);
-    // const target = document.querySelector('#observed');
-    // observer.observe(target);
-    // this.createObserver();
-    // this.scroll = new ScrollReveal(
-    //   '.home-description',
-    //   {
-    //   reset: true,
-    //   distance: '60px',
-    //   duration: 2500, 
-    //   delay: 400
-    // });
-    // console.log(ScrollReveal().version);
-    // const scroller = new 
-    // ScrollReveal().reveal('.swiper_div', {
-    //   reset: true,
-    //   distance: '60px',
-    //   duration: 2500, 
-    //   delay: 400, origin: 'left'}, 0);
-    // console.log(scroller.isSupported());
   }
 
-  // callback = (entries, observer) => {
-  //   entries.forEach(entry=> {
-  //     console.log(entry);
-  //   });
-  // }
+  ngAfterViewInit(): void {}
 
-  ngAfterViewInit(): void {
-  }
-
-  // onSwiper([swiper]) {
-  //   console.log(swiper);
-  // }
-  // onSlideChange() {
-  //   console.log('slide change');
-  // }
   onVisible(event: any) {
     console.log('visible event');
     console.log(event);
+  }
+
+  onCaret(event: any) {
+    this.descExists = !this.descExists;
   }
 
 }
