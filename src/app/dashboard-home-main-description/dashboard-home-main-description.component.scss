@@ -6,33 +6,44 @@
 //   height: 100%;
 // }
 
-// .swiper-slide {
+.mySwiper {
+  background-color: white;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  // width: 40%;
+  // height: 25%;
+  grid-column: 17 / 36;
+  grid-row: 5 / 17;
+}
 
-//     text-align: center;
-//     font-size: 18px;
-//     background: #fff;
+.swiper-slide {
 
-//     /* Center slide text vertically */
-//     display: -webkit-box;
-//     display: -ms-flexbox;
-//     display: -webkit-flex;
-//     display: flex;
-//     -webkit-box-pack: center;
-//     -ms-flex-pack: center;
-//     -webkit-justify-content: center;
-//     justify-content: center;
-//     -webkit-box-align: center;
-//     -ms-flex-align: center;
-//     -webkit-align-items: center;
-//     align-items: center;
-// }
+    text-align: center;
+    font-size: 18px;
+    // background: #fff;
 
-// .swiper-slide img {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.mySwiper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* attempt at paralax */
 .swiper_div {
@@ -183,15 +194,9 @@
 }
 
 .home-description {
-    // border: 2% solid;
-    // background: #eee;
     position: relative;
     width: 100%;
     height: 100vh;
-    // left: 0;
-    // bottom: -60px;
-    // bottom: -10%;
-    // grid-gap: 2rem;
     padding: 4rem;
     background: url("../../assets/home_desc_bck.png") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -199,28 +204,12 @@
     -o-background-size: cover;
     background-size: cover;
     display: grid;
-    // grid-template-columns: repeat(2, 1fr);
     grid-template-columns: 6fr 4fr;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 
-    // display: grid;
-    // grid-template-columns: repeat(20, minmax(15%, 1fr));
-    // grid-template-rows: repeat(20, 1fr);
-
-    // background-color: aqua;
-    // border-radius: 10px;
     // box-shadow: 0 20px 20px -17px rgba(0,111,255,0.53);
     // background: linear-gradient(to bottom, #1d1d1f, #8770b8 50%, #8770b8 100%);
-}
-
-.about-me {
-  width: 100%;
-  height: 100vh;
-  background-color: #1d1d1f;
-}
-
-.left-home-description, .right-home-description {
-  // display: block;
 }
 
 .left-home-description {
@@ -288,6 +277,7 @@
     width: 100%;
     align-self: center;
     padding: 2%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-profile {
@@ -306,6 +296,79 @@
   grid-row: 5 / 17;
   z-index: 0;
   background-color: #000;
+}
+
+.about-me {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-color: #252528;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // overflow: hidden;
+}
+
+.about-me-title {
+  position: relative;
+  left: 3rem;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.left-about-me { 
+  height: 100%;
+  position: relative;
+  width: 50%;
+}
+
+.about-me-slideshow { 
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  gap: 1rem;
+  height: 25%;
+  position: relative;
+  top: 15%;
+  left: 10%;
+  background-image: url("../../assets/desc1.jpg");
+}
+
+.about-me-slideshow div {
+  width: 100%; 
+  height: 100%;
+}
+
+.about-me-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-me-slideshow p {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  align-self: center;
+}
+
+// .about-me-img {
+//   grid-column: 5fr; 
+// }
+
+.right-about-me {
+  background-color: blue;
+  height: 100%;
+  position: relative;
+  // left: -50%;
+  // top: 0;
+  // width: 50%;
+}
+
+.right-about-me p {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .desc-item-title {
