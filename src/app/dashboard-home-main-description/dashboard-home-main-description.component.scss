@@ -306,15 +306,16 @@
   padding: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // overflow: hidden;
-}
+  }
 
 .about-me-title {
   position: relative;
-  left: 3rem;
+  left: 4.5rem;
   font-size: 2rem;
   font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   color: white;
+  letter-spacing: .05rem;
 }
 
 .left-about-me { 
@@ -325,14 +326,47 @@
 
 .about-me-slideshow { 
   display: grid;
-  grid-template-columns: 5% 90% 5%;
+  // grid-template-columns: 5% 90% 5%;
+  grid-template-columns: 1fr 10fr 1fr;
   gap: 1rem;
-  height: 25%;
-  position: relative;
-  top: 15%;
+  height: 40%;
+  width: 150%;
+  position: absolute;
+  top: 10%;
   left: 10%;
   background-image: url("../../assets/desc1.jpg");
+  background-size: cover;
+  border-radius: 43px;
+  z-index: 1;
 }
+
+.about-me-slideshow-shadow {
+  position: absolute;
+  background-color: #324DDB;
+  border-radius: 43px;
+  height: 40%;
+  width: 150%;
+  top: 12%;
+  left: 15%;
+}
+
+.about-me-slideshow svg {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  // z-index: 5;
+}
+
+#leftarrw:hover {
+  cursor: pointer;
+  fill: black;
+}
+
+#rightarrw:hover {
+  cursor: pointer;
+  fill: black;
+}
+
 
 .about-me-slideshow div {
   width: 100%; 
@@ -357,7 +391,6 @@
 // }
 
 .right-about-me {
-  background-color: blue;
   height: 100%;
   position: relative;
   // left: -50%;
@@ -366,10 +399,41 @@
 }
 
 .right-about-me p {
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
+  font-weight: 550;
   color: white;
 }
+
+.right-about-me div {
+  background-color: #324DDB;
+  width: 80%;
+  height: 40%;
+  border-radius: 43px;
+  padding: 2.5rem;
+  position: absolute;
+}
+
+.about-me-desc1 {
+  top: 5%;
+  right: 5%;
+}
+
+.about-me-desc2 {
+  // top: 90%;
+  bottom: -5%;
+  left: -10%;
+}
+
+.about-me-cross {
+  position: absolute;
+  top: 5%;
+  left: 48%;
+  width: 100px;
+  height: 100px;
+
+}
+
 
 .desc-item-title {
   display: grid;

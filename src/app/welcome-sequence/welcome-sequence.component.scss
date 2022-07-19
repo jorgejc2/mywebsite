@@ -1,0 +1,47 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    border: 2px black;
+    background-color: #41659e;
+    display: grid;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(24, 1fr);
+}
+
+.welcome_text, .welcome_text_overlay{
+    // grid-area: 1/1;
+}
+
+.welcome {
+    // position: relative;
+    // grid-area: 10/8/span 3/auto;
+    grid-column: 8 / span 8;
+    grid-row: 10 / span 4;
+    // top: 30%;
+    // height: 40%;
+    // width: 80%;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: grey;
+    z-index: 1;
+}
+
+.welcome p {
+    margin: auto;
+    text-align: center;
+    font-size: 10rem;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.welcome_text_overlay {
+    // height: 40%;
+    // width: 80%;
+    border: 2px solid aqua;
+    border-radius: 5px;
+    background-color: yellow;
+    grid-column: 9 / span 8;
+    grid-row: 11 / span 4;
+}
