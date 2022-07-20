@@ -96,8 +96,10 @@
 
 <div class="about-me">
 
-  <div class="left-about-me">
-    <p class=about-me-title>About Me</p>
+  <div class="left-about-me" [ngsReveal]="{ reset: true, delay: 50, origin: 'left', distance: '500px'}">
+    <div class="about-me-title">
+      <p>About Me</p>
+    </div>
 
     <div class="about-me-slideshow">
         <svg xmlns="http://www.w3.org/2000/svg"
@@ -175,25 +177,33 @@
       ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc8.jpg" alt="home pic nine"></ng-template>
     </swiper> -->
   </div>
-  <div class="right-about-me">
+  <div class="right-about-me" [ngsReveal]="{ reset: true, delay: 20, origin: 'right', distance: '500px'}">
     <div class="about-me-desc1">
-      <p>
-        Taking AP Computer Science Principles in high school is what peaked my interest in programming and led me to pursue computer engineering. I was more enticed by the software aspect and seeing how much of a creative outlet it gave people. I remember my first dream was creating a gaming app for the app store and having it be trending. 
-      </p>
-      <p>
-        My only issue at the time was that I had never coded in my life and felt I wasn’t capable and didn’t have the knowledge to do so. 
-      </p>
+      <div class="top-left"></div><div></div><div class="top-right"></div><div></div>
+      <div class="center">
+        <p>
+          Taking AP Computer Science Principles in high school is what peaked my interest in programming and led me to pursue computer engineering. I was more enticed by the software aspect and seeing how much of a creative outlet it gave people. I remember my first dream was creating a gaming app for the app store and having it be trending. 
+        </p>
+        <p>
+          My only issue at the time was that I had never coded in my life and felt I wasn’t capable and didn’t have the knowledge to do so. 
+        </p>
+      </div>
+      <div></div><div class="bottom-left"></div><div></div><div class="bottom-right"></div>
     </div>
     <div class="about-me-desc2">
-      <p>
-        Despite that, I applied everywhere and thankfully got accepted to U of I.
-      </p>
-      <p>
-        The courses I’ve taken have only empowered me and helped me grow in confidence with my ability to code and work with hardware. 
-      </p>
-      <p>
-        I’ve grown a deep appreciation for computers and the impact they can have around us. 
-      </p>
+      <div class="top-left"></div><div></div><div class="top-right"></div><div></div>
+      <div class="center">
+        <p>
+          Despite that, I applied everywhere and thankfully got accepted to U of I.
+        </p>
+        <p>
+          The courses I’ve taken have only empowered me and helped me grow in confidence with my ability to code and work with hardware. 
+        </p>
+        <p>
+          I’ve grown a deep appreciation for computers and the impact they can have around us. 
+        </p>
+      </div>
+      <div></div><div class="bottom-left"></div><div></div><div class="bottom-right"></div>
     </div>
   </div>
 
