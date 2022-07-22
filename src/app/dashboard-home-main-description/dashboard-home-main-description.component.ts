@@ -43,6 +43,12 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     },
   };
 
+  slideshow_class_list = [
+    'slideshow-one',
+    'slideshow-two'
+  ]
+  slideshow_num: number = 0;
+
   descExists: boolean = false;
 
   constructor() {}

@@ -340,10 +340,18 @@
   position: absolute;
   top: 10%;
   left: 10%;
-  background-image: url("../../assets/desc1.jpg");
+  // background-image: url("../../assets/desc1.jpg");
   background-size: cover;
   border-radius: 43px;
   z-index: 1;
+}
+
+.slideshow-one {
+  background-image: url("../../assets/desc1.jpg");
+}
+
+.slideshow-two {
+  background-image: url("../../assets/desc2.jpg");
 }
 
 .about-me-slideshow-shadow {
