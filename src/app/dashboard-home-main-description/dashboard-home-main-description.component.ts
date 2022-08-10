@@ -45,9 +45,16 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   slideshow_class_list = [
     'slideshow-one',
-    'slideshow-two'
+    'slideshow-two',
+    'slideshow-three',
+    'slideshow-four',
+    'slideshow-five',
+    'slideshow-six'
   ]
   slideshow_num: number = 0;
+
+  timeline_visible: boolean = false;
+  timeline_init: boolean = false;
 
   descExists: boolean = false;
 
@@ -70,6 +77,30 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   }
 
   ngAfterViewInit(): void {}
+
+  prevSlideshowImg() {
+    if (this.slideshow_num > 0) {
+      this.slideshow_num--;
+      console.log("Prev Clicked")
+    }
+
+    return;
+  }
+
+  nextSlideshowImg() {
+    if (this.slideshow_num < this.slideshow_class_list.length - 1) {
+      this.slideshow_num++;
+      console.log("Next Clicked")
+    }
+
+    return;
+  }
+
+  toggleTimelineInfo() {
+    this.timeline_visible = !this.timeline_visible;
+    this.timeline_init = true;
+    return;
+  }
 
   onVisible(event: any) {
     console.log('visible event');

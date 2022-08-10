@@ -104,6 +104,7 @@
     <div class="about-me-slideshow"
     [ngClass]="slideshow_class_list[slideshow_num]">
         <svg xmlns="http://www.w3.org/2000/svg"
+        (click)="prevSlideshowImg()"
         width="9.72222in" height="9.72222in"
         viewBox="0 0 875 875">
           <path id="leftarrw"
@@ -134,6 +135,7 @@
         <!-- <img src="../../assets/desc1.jpg" alt="home pic one"> -->
         </div>
         <svg xmlns="http://www.w3.org/2000/svg"
+        (click)="nextSlideshowImg()"
         width="9.72222in" height="9.72222in"
         viewBox="0 0 875 875">
           <path id="rightarrw"
@@ -264,6 +266,71 @@
                 602.00,589.00 437.00,424.00 437.00,424.00 Z" fill="#555555"/>
     </svg>
   
+</div>
+
+<div class="college-timeline">
+
+  <div class="timeline-title">
+    <p>My College Timeline</p>
+  </div>
+
+  <div class="timeline-root"></div>
+
+  <div class="timeline-stem-top">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+    <div class="timeline-stem-message-top" (click)="toggleTimelineInfo()">
+      <p>Computer Engineer - Fall 2019</p>
+      <p> Continue . . .</p>
+    </div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 2/3;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+  <div class="timeline-stem-top" style="grid-column: 3/4;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 4/5;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+  <div class="timeline-stem-top" style="grid-column: 5/6;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 6/7">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+  <div class="timeline-stem-top" style="grid-column: 7/8;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 8/9">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+  <div class="timeline-stem-top" style="grid-column: 9/10;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 10/11">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+  <div class="timeline-stem-top" style="grid-column: 11/12;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-top"></div>
+  </div>
+  <div class="timeline-stem-bottom" style="grid-column: 12/13;">
+    <div class="timeline-stem-body"></div>
+    <div class="timeline-stem-bulb-bottom"></div>
+  </div>
+
+  <div class="timeline-detailed" [ngClass]="{'timeline-detailed-fadein': timeline_visible && timeline_init, 'timeline-detailed-fadeout': !timeline_visible && timeline_init, 'timeline-detailed-init': !timeline_init}"></div>
+
 </div>
 
 <!-- <div class="pixel_game" >

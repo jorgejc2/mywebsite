@@ -6,6 +6,56 @@
 //   height: 100%;
 // }
 
+/* fade in effect */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* fade out effect */
+
+@keyframes fadein {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 .mySwiper {
   background-color: white;
   position: relative;
@@ -298,12 +348,14 @@
   background-color: #000;
 }
 
+/* about me section */
+
 .about-me {
   position: relative;
   width: 100%;
   height: 95vh;
   background-color: #252528;
-  padding: 3rem;
+  padding: 3rem 3rem 6rem 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
@@ -311,8 +363,7 @@
 
 .about-me-title {
   position: absolute;
-  left: 4.5rem;
-  
+  left: 4.5rem;  
 }
 
 .about-me-title p {
@@ -341,17 +392,44 @@
   top: 10%;
   left: 10%;
   // background-image: url("../../assets/desc1.jpg");
-  background-size: cover;
+  background-size: fill;
   border-radius: 43px;
   z-index: 1;
 }
 
 .slideshow-one {
   background-image: url("../../assets/desc1.jpg");
+  background-size: cover;
 }
 
 .slideshow-two {
   background-image: url("../../assets/desc2.jpg");
+  background-size: cover;
+}
+
+.slideshow-three {
+  background-image: url("../../assets/desc3.jpg");
+  background-size: cover;
+}
+
+.slideshow-four {
+  background-image: url("../../assets/desc4.jpg");
+  background-size: cover;
+}
+
+.slideshow-five {
+  background-image: url("../../assets/desc5.jpeg");
+  background-size: cover;
+}
+
+.slideshow-six {
+  background-image: url("../../assets/desc6.jpg");
+  background-size: cover;
+}
+
+.slideshow-seven {
+  background-image: url("../../assets/desc7.jpeg");
+  background-size: cover;
 }
 
 .about-me-slideshow-shadow {
@@ -368,21 +446,12 @@
   width: 80px;
   height: 80px;
   align-self: center;
-  // z-index: 5;
 }
 
 #leftarrw:hover, #rightarrw:hover {
   cursor: pointer;
-  // fill: black;
   fill: #324DDB;
 }
-
-// #rightarrw:hover {
-//   cursor: pointer;
-//   fill: black;
-
-// }
-
 
 .about-me-slideshow div {
   width: 100%; 
@@ -402,16 +471,10 @@
   align-self: center;
 }
 
-// .about-me-img {
-//   grid-column: 5fr; 
-// }
 
 .right-about-me {
   height: 100%;
   position: relative;
-  // left: -50%;
-  // top: 0;
-  // width: 50%;
 }
 
 .right-about-me p {
@@ -423,22 +486,11 @@
   color: white;
 }
 
-/* .right-about-me div */
-// .right-about-me div {
-//   width: 100%;
-//   height: 100%;
-// }
-
 .about-me-desc1, .about-me-desc2{
   background-color: #252528;
-  // background-color: purple;
   width: 80%;
   height: 45%;
-  // border-radius: 43px;
-  
-  // padding: 2.5rem;
   position: absolute;
-
   display: grid;
   gap: 5px;
   grid-template-columns: 1fr 15fr 1fr;
@@ -452,10 +504,6 @@
 
 .about-me-desc1 div, .about-me-desc2 div {
   background-color: #324DDB;
-}
-
-.center {
-  // padding: 1rem;
 }
 
 .top-left {
@@ -489,8 +537,137 @@
 
 }
 
+/* college timeline section */
 
-.desc-item-title {
+.college-timeline {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background-color: #555555;
   display: grid;
-  grid-template-columns: 95% 5%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(48, 1fr);
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.timeline-title {
+  grid-column: 1/-1;
+}
+
+.timeline-title p {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: white;
+  letter-spacing: .05rem;
+  margin: 0px;
+  position: absolute;
+  left: 4.5rem;
+}
+
+.timeline-root {
+  background-color: #324DDB;
+  grid-column: 1/-1;
+  grid-row: 22/23;
+}
+
+.timeline-stem-top {
+  // background-color: #324DDB;
+  position: relative;
+  grid-row: 14/22;
+  // width: 40%;
+}
+
+.timeline-stem-bottom {
+  position: relative;
+  // background-color: #324DDB;
+  grid-row: 22/30;
+  // width: 40%;
+}
+
+.timeline-stem-body {
+  background-color: #324DDB;
+  width: 20%;
+  height: 100%;
+}
+
+.timeline-stem-bulb-top {
+  background-color: #324DDB;
+  border-radius: 50%;
+  width: 30%;
+  height: 20%;
+  top: -10%;
+  left: -5%;
+  position: absolute;
+}
+
+.timeline-stem-bulb-bottom {
+  background-color: #324DDB;
+  border-radius: 50%;
+  width: 30%;
+  height: 20%;
+  bottom: -10%;
+  left: -5%;
+  position: absolute;
+}
+
+.timeline-stem-message-top {
+  background-color: #55B9FB;
+  border-radius: 15%;
+  padding: 0.5rem;
+  position: absolute;
+  left: 40%;
+  top: 0%;
+  opacity: 70%;
+  width: 120%;
+  height: 50%;
+}
+
+.timeline-stem-message-top p, .timeline-stem-message-bottom p {
+  margin: 0px;
+}
+
+.timeline-stem-message-top:hover, .timeline-stem-message-bottom:hover {
+  cursor: pointer;
+}
+
+.timeline-detailed-init {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 32/-1;
+  opacity: 0;
+}
+
+.timeline-detailed-fadein {
+  background-color: #636363;
+  border-radius: 42px;
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 32/-1;
+  // -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  // -moz-animation: fadein 2s; /* Firefox < 16 */
+  // -ms-animation: fadein 2s; /* Internet Explorer */
+  // -o-animation: fadein 2s; /* Opera < 12.1 */
+  // animation: fadein 2s;
+  transition: opacity 2s linear;
+}
+
+.timeline-detailed-fadeout {
+  background-color: #636363;
+  border-radius: 42px;
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 32/-1;
+  // -webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
+  // -moz-animation: fadeout 2s; /* Firefox < 16 */
+  // -ms-animation: fadeout 2s; /* Internet Explorer */
+  // -o-animation: fadeout 2s; /* Opera < 12.1 */
+  // animation: fadeout 2s;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
