@@ -22,7 +22,7 @@ import { WelcomeSequenceComponent } from './welcome-sequence/welcome-sequence.co
     ImgDimDirective,
     ObserveVisibilityDirective,
     DashboardHeaderComponent,
-    WelcomeSequenceComponent
+    WelcomeSequenceComponent,
   ],
   imports: [
     BrowserModule,

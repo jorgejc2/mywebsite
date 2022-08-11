@@ -7,6 +7,8 @@ import 'swiper/swiper-bundle.css';
 import Swiper from 'swiper/bundle';
 import ScrollReveal from 'scrollreveal';
 
+import { TimelineBox } from './timeline-box.model';
+
 @Component({
   selector: 'app-dashboard-home-main-description',
   templateUrl: './dashboard-home-main-description.component.html',
@@ -56,6 +58,18 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   timeline_visible: boolean = false;
   timeline_init: boolean = false;
 
+  timeline_box_list: TimelineBox[] = [
+    new TimelineBox(0, "Computer Engineer", "Fall 2019", "Started college",
+    "In the Fall of 2019, I started my journey as a computer engineer at the University of Illinois. I vividly remember how excited I "
+    +"was being in a new environment and finally learning the basic concepts in my ECE 120 course.", 
+    "../../assets/desc1.jpg"),
+    new TimelineBox(1, "SHPE", "Fall 2019", "Joined as member", 
+    "Worked on SHPE tech on ASL hand", 
+    "none")
+  ];
+
+  timeline_box_selection: number = 0;
+
   descExists: boolean = false;
 
   constructor() {}
@@ -96,10 +110,44 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     return;
   }
 
-  toggleTimelineInfo() {
+  toggleTimelineInfo(id: number) {
     this.timeline_visible = !this.timeline_visible;
     this.timeline_init = true;
+    this.timeline_box_selection = id;
     return;
+  }
+
+  timelineGridPlacement(id: number) {
+    /* format grid-column entry */
+    let column_placement_num = id + 1;
+    let column_placement_den = id + 2;
+    let column: string = `${column_placement_num}/${column_placement_den}`
+
+    /* decide if stem should be on top or bottom */
+    if (id % 2 == 0) {
+      return {'grid-row': "14/22", 'grid-column': column};
+    }
+    else {
+      return {'grid-row': "22/30", 'grid-column': column};
+    }
+  }
+
+  timelineBulbPlacement(id: number) {
+    if (id % 2 == 0) {
+      return {'top': "-10%"};
+    }
+    else {
+      return {'bottom': "-10%"};
+    }
+  }
+
+  timelineInfoPlacement(id: number) {
+    if (id % 2 == 0) {
+      return {'top': "-50%"};
+    }
+    else {
+      return {'bottom': "-20%"};
+    }
   }
 
   onVisible(event: any) {

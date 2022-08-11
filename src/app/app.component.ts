@@ -33,15 +33,15 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   async ngOnInit(): Promise<void> {
-    console.log("awaiting promise");
-    await new Promise( resolve => setTimeout(resolve, 3000));
-    console.log("done awaiting");
-    this.animationDone = true;
+    // console.log("awaiting promise");
+    // await new Promise( resolve => setTimeout(resolve, 3000));
+    // console.log("done awaiting");
+    // this.animationDone = true;
 
     /* since animation has a duration of 2000 ms, we need to delay setting
     the home components to be visible by 2000 ms */
-    await new Promise( resolve => setTimeout(resolve, 2000));
-    this.homeVisible = true;
+    // await new Promise( resolve => setTimeout(resolve, 2000));
+    // this.homeVisible = true;
     }
 
 }
