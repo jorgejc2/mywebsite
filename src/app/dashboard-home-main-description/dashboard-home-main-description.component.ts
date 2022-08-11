@@ -70,6 +70,8 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   timeline_box_selection: number = 0;
 
+  curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
+
   descExists: boolean = false;
 
   constructor() {}

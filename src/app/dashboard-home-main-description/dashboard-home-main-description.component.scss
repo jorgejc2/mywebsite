@@ -542,7 +542,7 @@
 .college-timeline {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   background-color: #555555;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -562,8 +562,6 @@
   color: white;
   letter-spacing: .05rem;
   margin: 0px;
-  position: absolute;
-  left: 4.5rem;
 }
 
 .timeline-root {
@@ -625,7 +623,7 @@
   height: 100%;
   grid-column: 1/-1;
   grid-row: 32/-1;
-  padding: 2.5%;
+  padding: 0px 0px 0px 2.5%;
   transition: opacity 2s linear;
 }
 
@@ -635,6 +633,7 @@
   font-weight: 550;
   color: white;
   transition: opacity 2s linear;
+  margin: 20px 0px 0px 0px;
 }
 
 .timeline-detailed-fadeout {
@@ -652,7 +651,9 @@
 .timeline-detailed-content {
   display: grid;
   grid-template-columns: 55% 40%;
-  grid-gap: 5%;
+  grid-template-rows: 100%;
+  grid-column-gap: 5%;
+  width: 100%;
   height: 100%;
   transition: opacity 2s linear;
 }
@@ -670,4 +671,87 @@
   background-color: #324DDB;
   border-radius: 15px;
   padding: 20px;
+}
+
+/* projects section */ 
+
+.projects {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 90%;
+  row-gap: 5%;
+  width: 100%;
+  height: 100vh;
+  background-color: #1D1D1F;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.projects h1 {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: white;
+  letter-spacing: .05rem;
+}
+
+.project-slideshow {
+  height: 100%;
+  width: 100%;
+  background-color: #70517A;
+  border-radius: 42px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 90%;
+  row-gap: 5%;
+  padding: 2.5%;
+  position: relative;
+}
+
+.project-slideshow h2 {
+  color: white;
+}
+
+.project-content {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 95% 5%;
+  opacity: 60%;
+  position: relative;
+}
+
+.project-content svg {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+}
+
+.project-content-info {
+  padding: 2.5%;
+  position: relative;
+}
+
+.project-moreinfo {
+  justify-self: right;
+  margin: 0% 2.5% 0% 0%;
+}
+
+/* photo gallery section */
+
+.gallery {
+  position: relative;
+  // display: grid;
+  // grid-template-columns: 100%;
+  // grid-template-rows: 5% 90%;
+  // row-gap: 5%;
+  width: 100%;
+  height: 95vh;
+  background-color: #555555;
+  padding: 3rem;
+  overflow: hidden;
 }
