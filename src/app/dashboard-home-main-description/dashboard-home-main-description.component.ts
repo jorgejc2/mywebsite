@@ -125,10 +125,10 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
     /* decide if stem should be on top or bottom */
     if (id % 2 == 0) {
-      return {'grid-row': "14/22", 'grid-column': column};
+      return {'grid-row': "13/21", 'grid-column': column};
     }
     else {
-      return {'grid-row': "22/30", 'grid-column': column};
+      return {'grid-row': "21/29", 'grid-column': column};
     }
   }
 
