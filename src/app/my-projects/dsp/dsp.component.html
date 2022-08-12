@@ -61,12 +61,12 @@
             <strong>Digital Signal Processing was a topic I believed I would never figure out.</strong> That mentality completely changed after interning with 
             Motorola Solutions the summer of 2022. When I had applied for the internship, it was for a role in embedded systems, but as the start date of the internship 
             approached, my manager gave me more details on the project I was going to work on. It was still in the realm of embedded systems, but little did I know that I 
-            would be working with a software defined radio prototype.
+            would be working with a software defined radio.
         </p>
         <p>
-            In essence, the project I was tasked with was creating a software module in Python that would allow this software defined radio to be able to pick up 
+            The project I was tasked with was creating a software module in Python that would allow this software defined radio to be able to pick up 
             radio frequency activity for hours on end, and then process the signals that the radio picked up and be able to describe their attributes. The attributes to be defined 
-            included sthe center frequency a signal was found at, what time a signal was found, its bandwidth, its amplitude in decibals, and how many times the signal appeared on and off. 
+            included the center frequency a signal was found at, what time a signal was found, its bandwidth, its amplitude in decibals, and how many times the signal appeared on and off. 
             Why was this script so important to the device? Well, the main purpose of this software defined radio was to fake the presence of radio frequency activity. 
             Radio frequencies are everywhere, and they are essential to communication. There are standards such as LTE, Bluetooth, TDMR, Wifi, and even the radio frequencies that 
             come out of your microwave. It's difficult to try and mask the radio frequencies that you may use for communication. That's why this radio intentionally 
@@ -75,11 +75,52 @@
         </p>
         <p>
             I'm of course, exaggerating a little bit when I said that the SDR pumped out meaningless data. If it was purely meaningless data, others trying to listen in would 
-            eventually catch on. In order to emit signals, .wav files needed to be loaded onto the device while also configuring the device to pump out these .wav files at certain 
-            frequencies at intervals. It could also be loaded with pure IQ sample data and pump that information from the device as well. <a href="https://www.tek.com/en/blog/quadrature-iq-signals-explained#:~:text=Quadrature%20signals%2C%20also%20called%20IQ,as%20in%20complex%20signal%20analysis." target="_blank" rel="noopener noreferrer">IQ samples</a> are the digital samples 
-            of signals interpreted by an SDR. 
+            eventually catch on. In order to emit signals, .wav audio files needed to be loaded onto the device while also configuring the device to pump out these .wav files at certain 
+            frequencies and intervals. It could also be loaded with pure IQ sample data and pump that information from the device as well. <a href="https://www.tek.com/en/blog/quadrature-iq-signals-explained#:~:text=Quadrature%20signals%2C%20also%20called%20IQ,as%20in%20complex%20signal%20analysis." target="_blank" rel="noopener noreferrer">IQ samples</a> are the digital samples 
+            of signals interpreted by an SDR. Loading data onto the SDR and configuring it may seem relatively simple to anyone with a background in digital 
+            signal processing, but this may not be the case for everyone. Therefore, this software module that I created made it so that anyone could use the device with ease. With a few 
+            switches available on the device, a user could simply put the radio into receive mode, conduct business as normal for a few hours while the radio picks up the radio activity 
+            near the user, and then the flip of another switch would take the radio out of receive mode, process the data it recorded, and begin transmitting what it found. Even better, 
+            since it begins transmitting the signals it was picking up in the first place, it looks as if the user who set up the device never left. 
         </p>
-        <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@JorgeChavez14/HelloWorld?embed=true?embed=true?embed=true?lite=true"></iframe>
+        <p>
+            <strong>Though the goal of my project was fairly straightforward, I didn't know where to begin.</strong> Though I had taken a class that was an introduction to digital 
+            signal processing (ECE 310 at UIUC), I believed that it focused so much on the mathematical and theoretical details, that it was difficult to interpret the applications 
+            of digital signal processing. Luckily, I had also taken a class concurrently with ECE 310 which was a lab section that dealt with looking more into the applications of 
+            digital signal processing (ECE 311). The class definitely helped, but the labs were purely in Python and at times, it seemed as if I was writing code to generate graphs 
+            while hoping the graph I created was the right one to receive the grade points. This may not have been the experience for everyone, but it most certainly was for me. 
+            As I settled into the cubicle that I would be working out of for the majority of the summer, my team left me with an <a href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview" target="_blank" rel="noopener noreferrer">ADALM-PLUTO SDR Learning Module</a> before actually letting 
+            me use the prototype they were developing on. With this small SDR and some scripts that they left me, I began playing around with it and looking for other resources to help 
+            reinforce the concepts of digital signal processing into my mind. For the first two weeks, I would create and run my own scripts to run on the Pluto while also reading articles, videos, 
+            and even writing code alongside <a href="https://pysdr.org/index.html" target="_blank" rel="noopener noreferrer">this website resource</a> that I believe is amazing for anyone who is trying to learn and apply digital signal processing (in order to code alongside this resource, an 
+            ADALM-PLUTO is required). After those two weeks of testing and learning, I felt as if I had finally developed a knowledgeable foundation to begin working on. The next step was 
+            planning and actually developing on the SDR prototype. 
+        </p>
+        <p>
+            When it came to planning, I had to take hardware limitations into account. Since this radio was a pretty small device, that meant it didn't carry lots of processing power 
+            or memory. Memory was most definitely the biggest issue, but even if I had worked on a device that had ample memory, iq data isn't cheap. One of the goals for this radio was to be 
+            able to look at a large frequency spectrum at once, more specifically, at least 40 MHz of spectrum. The number of iq samples depends on how much spectrum of signal bandwidth you 
+            are analyzing, as well as the sample rate and how long you are recording samples. The sample rate is how many samples of iq data is recorded per second, and according to a theorem 
+            called the Nyquist Theorem, the sample rate should be at least twice that of the bandwidth of spectrum you are analyzing to prevent a phenomenon called aliasing (learn more about 
+            aliasing <a href="https://youtu.be/yWqrx08UeUs" target="_blank" rel="noopener noreferrer">here</a>). The benefit of IQ sampling is that every time a sample for a signal is recorded, 
+            a qudrate copy of the sample is created as well. This means that if we look at a spectrum of 40 MHz, then a sampling rate of 40 megasamples/second fulfills Nyquist's Sampling Theorem. 
+            Now, if we were to record a signal for only one second, then that means 40 megasamples of data is recorded, or 40 million samples. That's already an incredibly large amount, 
+            and the SDR radio is supposed to be able to listen to signal activity for hours on end. It's easy to see that this amount of samples can quickly eat up memory. Thus when it came to planning, 
+            I first needed to figure out how to record signals for hours on end without the radio crashing in a few seconds from memory overload. During my two weeks of looking at resources on 
+            digital signal processing, I ended up coming across something I never heard of before called Welch's Method that proved to be the key to fixing my memory issue.
+        </p>
+        <p>
+            <strong>Welch's Method is a digital signal processing technique used to approximate signals,</strong> and it was exactly what I needed. At a high level, it's very simple in that 
+            it replicates signal activity but without returning as many samples. The number of samples the method returns is configurable among other things. Thanks to the abundant amount of 
+            libraries available in Python, especially with signal processing, it was easy to incorporate this method into my scripts, and the results I found right away were astounding. To give more 
+            detail about how these samples are used to analyze signals, its important to know the difference between analyzing signals in the time and frequency domain. The time domain should be 
+            familiar to everyone. The x-axis is time in lets say seconds, and the y-axis is any other kind of indicator, in this case, the amplitude of a signal. For other analytitics, a graph in the 
+            time domain makes perfect sense. For example, if we wanted to look at the distance a car covers over a period of time, the x-axis could be minutes, and the y-axis could be the number 
+            of miles. But for signals, the graph becomes nearly meaningless to the human eye. Through a method called the Fast Fourier Transform method though, we could transform this signal 
+            graph from the time to the frequency domain. In the frequency domain, things become much clearer. The x-axis is the different frequencies signals occurred at, and the y-axis is 
+            the amplitude of every signal in decibals. I coded a quick example to display the results of a signal in its time domain versus its frequency domain. 
+        </p>
+        <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@JorgeChavez14/BasicSignalNoiseAndGraphing?lite=true"></iframe>
     </div>
     <div class="right-space">
         <!-- <p>right space</p> -->
