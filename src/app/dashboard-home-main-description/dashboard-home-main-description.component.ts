@@ -72,7 +72,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   timeline_box_selection: number = 0;
 
   project_names: string[] = ["DSP", "Coming Soon !!"];
-  project_paths: string[] = ["dsp"]
+  project_paths: string[] = ["/dsp"]
   curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
 
   descExists: boolean = false;
@@ -165,7 +165,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   }
 
   navigateProject() {
-    let path = `/projects/${this.project_paths[this.curr_project]}`;
+    let path = `${this.project_paths[this.curr_project]}`;
     this.router.navigate([path]);
   }
 

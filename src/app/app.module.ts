@@ -12,16 +12,20 @@ import {NgsRevealModule} from 'ngx-scrollreveal';
 import { ObserveVisibilityDirective } from './observe-visibility.directive';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { WelcomeSequenceComponent } from './welcome-sequence/welcome-sequence.component';
-import { RouterModule, Routes } from '@angular/router';
-import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { RouterModule, Routes, ExtraOptions, Router, Scroll } from '@angular/router';
 import { DspComponent } from './my-projects/dsp/dsp.component';
+import { ViewportScroller } from '@angular/common';
+import { filter } from 'rxjs';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardHomeMainDescriptionComponent },
-  { path: 'projects', component: MyProjectsComponent, children: [
-    { path: 'dsp', component: DspComponent }
-  ]}
-]
+  { path: 'dsp', component: DspComponent },
+];
+
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+};
 
 @NgModule({
   declarations: [
@@ -33,17 +37,39 @@ const appRoutes: Routes = [
     ObserveVisibilityDirective,
     DashboardHeaderComponent,
     WelcomeSequenceComponent,
-    MyProjectsComponent,
-    DspComponent
+    DspComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     SwiperModule,
     NgsRevealModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,
+      routerOptions
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(router: Router, viewportScroller: ViewportScroller) {
+    viewportScroller.setOffset([0, 50]);
+    router.events.pipe(filter(e => e instanceof Scroll)).subscribe((e: Scroll) => {
+      if (e.anchor) {
+        // anchor navigation
+        /* setTimeout is the core line to solve the solution */
+        setTimeout(() => {
+          viewportScroller.scrollToAnchor(e.anchor);
+        })
+      } else if (e.position) {
+        // backward navigation
+        viewportScroller.scrollToPosition(e.position);
+      } else {
+        // forward navigation
+        viewportScroller.scrollToPosition([0, 0]);
+      }
+    });
+  }
+
+}
