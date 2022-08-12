@@ -28,6 +28,12 @@
     left: 2rem;
 }
 
+.name_tag a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
 .toolbar img {
     margin: 0 16px;
 }

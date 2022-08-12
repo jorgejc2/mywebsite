@@ -8,6 +8,7 @@ import Swiper from 'swiper/bundle';
 import ScrollReveal from 'scrollreveal';
 
 import { TimelineBox } from './timeline-box.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-home-main-description',
@@ -70,11 +71,13 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   timeline_box_selection: number = 0;
 
+  project_names: string[] = ["DSP", "Coming Soon !!"];
+  project_paths: string[] = ["dsp"]
   curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
 
   descExists: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // SwiperCore.use([Navigation, Pagination, Parallax])
@@ -159,6 +162,11 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   onCaret(event: any) {
     this.descExists = !this.descExists;
+  }
+
+  navigateProject() {
+    let path = `/projects/${this.project_paths[this.curr_project]}`;
+    this.router.navigate([path]);
   }
 
 }

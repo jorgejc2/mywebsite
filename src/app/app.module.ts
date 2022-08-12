@@ -12,6 +12,16 @@ import {NgsRevealModule} from 'ngx-scrollreveal';
 import { ObserveVisibilityDirective } from './observe-visibility.directive';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { WelcomeSequenceComponent } from './welcome-sequence/welcome-sequence.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { DspComponent } from './my-projects/dsp/dsp.component';
+
+const appRoutes: Routes = [
+  { path: '', component: DashboardHomeMainDescriptionComponent },
+  { path: 'projects', component: MyProjectsComponent, children: [
+    { path: 'dsp', component: DspComponent }
+  ]}
+]
 
 @NgModule({
   declarations: [
@@ -23,12 +33,15 @@ import { WelcomeSequenceComponent } from './welcome-sequence/welcome-sequence.co
     ObserveVisibilityDirective,
     DashboardHeaderComponent,
     WelcomeSequenceComponent,
+    MyProjectsComponent,
+    DspComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     SwiperModule,
     NgsRevealModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -741,6 +741,27 @@
   margin: 0% 2.5% 0% 0%;
 }
 
+.project-moreinfo a {
+  cursor: pointer;
+}
+
+.project-one {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 20px;
+}
+
+.project-one img {
+  border-radius: 15px;
+  grid-column: span 2; 
+  width: 100%; 
+  height: 100%; 
+  justify-self: center;
+  max-width: 400px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
 /* photo gallery section */
 
 .gallery {
@@ -774,6 +795,31 @@
   padding: 2.5%;
   opacity: 60%;
   overflow-y: auto;
+}
+
+/* changing the view of the scrollbar in the gallery-content */
+.gallery-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.gallery-content::-webkit-scrollbar-track {
+background: #f1f1f1;
+/* border radius is 42px so decrease height to have scroll bar fit inside */
+border-radius: 20px;
+margin-top: 42px;
+margin-bottom: 42px;
+}
+
+/* Handle */
+.gallery-content::-webkit-scrollbar-thumb {
+background: #888;
+border-radius: 20px;
+}
+
+/* Handle on hover */
+.gallery-content::-webkit-scrollbar-thumb:hover {
+background: #555;
 }
 
 .gallery-content p:nth-child(10n + 1) {

@@ -302,7 +302,7 @@
 <div class="projects">
   <h1>My Projects</h1>
   <div class="project-slideshow">
-    <h2>Coming Soon !!</h2>
+    <h2>{{ project_names[curr_project] }}</h2>
     <div class="project-content">
       <svg xmlns="http://www.w3.org/2000/svg"
         width="9.72222in" height="9.72222in"
@@ -333,10 +333,27 @@
       </svg>
       <div class="project-content-info">
 
-        <div *ngIf="curr_project == 0">
-          <p>This project is one that I created in conjunction with the Udemy course that I studied from to learn the Angular framework.
-            My next goal is to port this over as an Android and Apple app using Flutter.
-          </p>
+        <div class="project-one" *ngIf="curr_project == 0">
+          <div style="grid-column: 1 / span 3;">
+            <p>This is a culmination of scripts I used to get more experience with digital signal processing (DSP). Thanks to my internship 
+              with Motorola Solutions in the summer of 2022, I got hands on experience working with a software defined radio (SDR) which involved 
+              interacting with the hardware to pull iq samples and use digital signal processing methods such as the Fast Fourier Transform. 
+            </p>
+            <p>
+              In my free time, I created a repository of scripts to help practice concepts I had learned from my DSP class at UIUC, as well as what 
+              I was learning at the summer internship. In my first two weeks of the internship, my team helped me catch up to speed by giving me an 
+              <a href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview" target="_blank" rel="noopener noreferrer">ADALM-PLUTO SDR Learning Module</a> to work with before working on the actual prototype they were developing on. 
+            </p>
+            <p>
+              In this repository, you will find scripts that work with this Pluto device to perform functions such as transmitting and receiving data. 
+              My favorite script in this repository though, is one that listens to radio frequency activity for 10 minutes, and processes the signals it 
+              recorded over those 10 minutes. Processing includes transforming the iq samples to the frequency domain, and determining at what frequencies 
+              signals occurred, as well as their bandwidth and how many times they occured. 
+            </p>
+          </div>
+
+          <img src="../../assets/pluto_inperson.jpg" alt="In person ADALM-PLUTO">
+
         </div>
         
 
@@ -370,7 +387,7 @@
                     276.00,289.27 298.00,270.00 298.00,270.00 Z" fill="#000"/>
         </svg>
         <div></div>
-        <p class="project-moreinfo">Learn More!</p>
+        <p class="project-moreinfo" (click)="navigateProject()"><a>Learn More!</a></p>
     </div>
   </div>
 </div>
