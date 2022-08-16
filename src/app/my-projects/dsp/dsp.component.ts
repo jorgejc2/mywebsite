@@ -23,4 +23,10 @@ export class DspComponent implements OnInit, AfterViewChecked {
     this.router.navigate(['/'], { fragment: "targetProject" });
   }
 
+  goIntro(el: any) {
+    console.log(el)
+    console.log(typeof(el))
+    el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
 }
