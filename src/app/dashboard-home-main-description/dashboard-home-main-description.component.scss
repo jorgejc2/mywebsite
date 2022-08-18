@@ -809,6 +809,36 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
+    height: 100%;
+  }
+
+  .project-one-content {
+    overflow-y: auto;
+  }
+
+  /* changing the view of the scrollbar in the gallery-content */
+  .project-one-content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  .project-one-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* border radius is 42px so decrease height to have scroll bar fit inside */
+  border-radius: 20px;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  }
+
+  /* Handle */
+  .project-one-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  .project-one-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
   }
 
   .project-one img {
@@ -920,6 +950,21 @@
   letter-spacing: .05rem;
 }
 
+.gallery-description {
+  // background-color: white;
+  border-radius: 42px;
+  padding: 10%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.gallery-description p {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgb(89, 89, 89);
+  letter-spacing: .05rem;
+}
+
 .gallery-content {
   // background-color: white;
   border-radius: 42px;
@@ -1005,14 +1050,57 @@ background: #555;
   color: orange;
 }
 
+.gallery-photo-info-card {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 .gallery-photo-info {
-  position: absolute;
-  left: 25%;
-  top: 25%;
-  width: 50%;
-  height: 50%;
-  background-color: black;
-  opacity: 60%;
+  position: fixed;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2.5%;
   z-index: 2;
+}
+
+.gallery-photo-info img {
+  display: block; 
+  margin: auto;
+  object-fit: contain;
+  width: 80%;
+  height: 70%;
+}
+
+.gallery-photo-info p {
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgb(89, 89, 89);
+  letter-spacing: .05rem;
+}
+
+.gallery-photo-info svg {
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* transition to footer */
+
+.toFooter {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, #555555, #555555 50%, #34447C 100%);
 }

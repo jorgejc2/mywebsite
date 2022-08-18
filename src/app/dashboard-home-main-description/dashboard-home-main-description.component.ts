@@ -8,6 +8,7 @@ import Swiper from 'swiper/bundle';
 import ScrollReveal from 'scrollreveal';
 
 import { TimelineBox } from './timeline-box.model';
+import { GalleryItem } from './gallery-item.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -74,6 +75,52 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   project_names: string[] = ["Digital Signal Processing", "Coming Soon !!"];
   project_paths: string[] = ["/dsp", "/"]
   curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
+
+  gallery_items: GalleryItem[] = [
+    new GalleryItem(true, "chicago_bday_lunch.jpg", "Chicago bday lunch", "Getting lunch with friends in Chicago"),
+    new GalleryItem(true, "first_internship_cointerns.jpg", "With Motorola interns", "With Motorola interns"),
+    new GalleryItem(true, "moto_drone_tester.jpg", "Moto drone tester", "Testing out Motorola Solution's drone"),
+    new GalleryItem(true, "drivein_movies.jpg", "drive in movies","drive in movies watching Pixar's Buzz Lightyear"),
+    new GalleryItem(true, "bday_before_college.jpeg", "birthday before college", "Birthday before starting college", "object-fit: contain;"),
+    new GalleryItem(false, undefined, undefined, undefined, "background-color: aqua;"),
+    new GalleryItem(true, "chicago_planetarium_lakeside.jpg", "sitting on the lakeside of the Chicago planetarium", "sitting on the lakeside of the Chicago planetarium"),
+    new GalleryItem(true, "drivein_movies_2.jpg", "drive in movie set up", "Waiting for Buzz Lightyear to start at the drive in movies"),
+    new GalleryItem(true, "moto_chicago_trip_rooftop.jpg", "apartment rooftop view"),
+    new GalleryItem(true, "chicago_marianos_rooftop.jpg", "Marianos Chicago rooftop", "Watching the sunset on top of the Mariano's parking garage"),
+    new GalleryItem(true, "eceb_sunset.jpg", "eceb sunset", "A view of the sunset from one of the ECEB hallways"),
+    new GalleryItem(true, "first_solarcar_meeting.jpg", "Solar Car Onboarding", "My first Solar Car meeting during the pandemic"),
+    new GalleryItem(true, "asl_hand.jpg", "asl hand", "Programming the ASL hand in my dorm room", "object-fit: contain;"),
+    new GalleryItem(true, "physics_iolab.jpg", "physics iolab", "The physics iolab devices used for labs. One of the physics labs is where I learned the z test which I used to identify signals in my 2022 summer internship with Motorola Solutions."),
+    new GalleryItem(true, "lego_date.jpg", "lego date", "Building Lego roses with my girlfriend"),
+    new GalleryItem(true, "ece120_lab.jpg", "ece120 lab", "Lab circuit for ECE 120. Basic lab powering LED's but the later lab was building a finite state machine for a vending machine."),
+    new GalleryItem(true, "moto_chicago_inoffice.jpg", "Moto Chicago Office", "Working in the Moto Chicago office", "object-fit: contain;"),
+    new GalleryItem(true, "lego_brickheadz.jpg", "lego brickheadz", "Building Lego Brickheadz that I bought with friends"),
+    new GalleryItem(true, "isr_lobby.jpg", "isr lobby", "Lounging in the new ISR building sophomore year."),
+    new GalleryItem(true, "loomis_outdoors.jpg", "outdoors at loomis", "Doing work outside the Loomis building on campus"),
+    new GalleryItem(true, "dinner_potluck.jpg", "dinner potluck", "Having a small dinner potluck with some friends over the summer."),
+    new GalleryItem(false, undefined, undefined, undefined, "background-color: green;"),
+    new GalleryItem(true, "uiuc_quad_night.jpg", "nighttime at uiuc", "Reading at the quad at night"),
+    new GalleryItem(true, "garage_rooftop_photoshoot.jpg", "Working in Moto Chicago office", "Doing work with other interns in the Motorola Chicago office.", "object-fit: contain;"),
+    new GalleryItem(true, "batterybox_connectors.jpg", "battery box connectors 1", "Designing the battery box connectors for the solar car"),
+    new GalleryItem(true, "batterybox_connectors_2.jpg", "battery box connectors 2", "Fitting the 3D printed battery box connectors onto the car."),
+    new GalleryItem(true, "dorm_halloween.jpg", "dorm halloween", "Dressing up for halloween in the dorms and later watching a movie with friends."),
+    new GalleryItem(false, undefined, undefined, undefined, "background-color: orange;"),
+    new GalleryItem(true, "winter_covid.jpg", "covid winter break", "Catching Covid during winter break so I just quarantined and played Minecraft."),
+    new GalleryItem(true, "moto_chicago_lakesideshore.jpg", "chicago lakeshore", "A view of the Chicago Lakeshore with other interns"),
+    new GalleryItem(true, "classes_outside.jpg", "classes outside", "taking virtual classes outside on the quad"),
+    new GalleryItem(true, "bourbanaise_sunet.jpg", "sunset in bourbanaise", "Catching the sunset with a friend after going for a walk in the park"),
+    new GalleryItem(true, "mika_sushi_date.jpg", "sushi date", "Sushi date with my girlfriend in St Louis", "object-position: 50% 20%;"),
+    new GalleryItem(true, "quad_reading.jpg", "reading on the quad", "reading This Little Life on the quad"),
+    new GalleryItem(true, "pumpkin_carving.jpg", "pumpkin carving night", "Carving pumpkins with friends during the Halloween season."),
+    new GalleryItem(true, "babyyodas_studysession.jpg", "baby yoda study session", "Finding Baby yodas at Costco for $20 so we bought a few"), 
+    new GalleryItem(false, undefined, undefined, undefined, "background-color: aqua;"),
+    new GalleryItem(true, "brian_photographing.jpg", "brian taking pictures", "Walking in Tom Ping park in Chicago while Brian tries his new camera."),
+    new GalleryItem(true, "dormroom_sunset.jpg", "sunset in the dorm room", "Watching the sunset from my dorm room")
+  ]
+
+  currGalleryItem: GalleryItem;
+
+  displayGallery: boolean = false;
 
   descExists: boolean = false;
 
@@ -181,6 +228,20 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   navigateProject() {
     let path = `${this.project_paths[this.curr_project]}`;
     this.router.navigate([path]);
+  }
+
+  imgDetails(idx: number) {
+    if (this.gallery_items[idx].image) {
+      this.currGalleryItem = this.gallery_items[idx]
+    }
+  }
+  
+  exitImgDetails() {
+    this.currGalleryItem = undefined;
+  }
+
+  showGallery() {
+    this.displayGallery = true;
   }
 
 }
