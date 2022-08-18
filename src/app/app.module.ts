@@ -16,6 +16,7 @@ import { RouterModule, Routes, ExtraOptions, Router, Scroll } from '@angular/rou
 import { DspComponent } from './my-projects/dsp/dsp.component';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs';
+import { DashboardFooterComponent } from './dashboard-footer/dashboard-footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardHomeMainDescriptionComponent },
@@ -38,6 +39,7 @@ const routerOptions: ExtraOptions = {
     DashboardHeaderComponent,
     WelcomeSequenceComponent,
     DspComponent,
+    DashboardFooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -71,8 +71,8 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   timeline_box_selection: number = 0;
 
-  project_names: string[] = ["DSP", "Coming Soon !!"];
-  project_paths: string[] = ["/dsp"]
+  project_names: string[] = ["Digital Signal Processing", "Coming Soon !!"];
+  project_paths: string[] = ["/dsp", "/"]
   curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
 
   descExists: boolean = false;
@@ -162,6 +162,20 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   onCaret(event: any) {
     this.descExists = !this.descExists;
+  }
+
+  prevProject() {
+    if (this.curr_project > 0) {
+      this.curr_project--;
+    }
+    return;
+  }
+
+  nextProject() {
+    if (this.curr_project < this.project_names.length - 1) {
+      this.curr_project++;
+    }
+    return;
   }
 
   navigateProject() {

@@ -268,6 +268,9 @@
 </div>
 
 <div class="college-timeline">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
   <div class="timeline-title">
     <p>My College Timeline</p>
@@ -307,7 +310,7 @@
       <svg xmlns="http://www.w3.org/2000/svg"
         width="9.72222in" height="9.72222in"
         viewBox="0 0 875 875">
-          <path id="leftarrw"
+          <path id="leftarrw" (click)="prevProject()"
                 fill="none" stroke="black" stroke-width="1"
                 d="M 580.00,270.00
                   C 580.00,270.00 603.00,289.27 603.00,289.27
@@ -335,25 +338,32 @@
 
         <div class="project-one" *ngIf="curr_project == 0">
           <div style="grid-column: 1 / span 3;">
-            <p>This is a culmination of scripts I used to get more experience with digital signal processing (DSP). Thanks to my internship 
-              with Motorola Solutions in the summer of 2022, I got hands on experience working with a software defined radio (SDR) which involved 
-              interacting with the hardware to pull iq samples and use digital signal processing methods such as the Fast Fourier Transform. 
+            <p>
+              During the summer of 2022, I had a chance to tackle a project involved with embedded systems as well as digital signal processing. It was 
+              a very involved experience and it led me to appreciate digital signal processing a lot more, a field that I previously didn't grasp as well. 
             </p>
             <p>
-              In my free time, I created a repository of scripts to help practice concepts I had learned from my DSP class at UIUC, as well as what 
-              I was learning at the summer internship. In my first two weeks of the internship, my team helped me catch up to speed by giving me an 
-              <a href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview" target="_blank" rel="noopener noreferrer">ADALM-PLUTO SDR Learning Module</a> to work with before working on the actual prototype they were developing on. 
+              By working with an <a href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview" target="_blank" rel="noopener noreferrer">Adalm Pluto SDR Learning Module</a> 
+              and a software defined radio, I was able to apply digital signal processing to real world signals and thus, gained invaluable experience that 
+              gave me a good knowledgeable foundation of the topic. Due to hardware limitations of the software defined radio that I was programming, 
+              I had to seek creative measures to preserve memory while still being able to use this radio to listen to radio frequencies for hours on end and 
+              characterize its findings.
             </p>
             <p>
-              In this repository, you will find scripts that work with this Pluto device to perform functions such as transmitting and receiving data. 
-              My favorite script in this repository though, is one that listens to radio frequency activity for 10 minutes, and processes the signals it 
-              recorded over those 10 minutes. Processing includes transforming the iq samples to the frequency domain, and determining at what frequencies 
-              signals occurred, as well as their bandwidth and how many times they occured. 
+              I found the project to be so much fun that I ended up buying my own personal Adalm Pluto SDR and creating scripts for it that used its full 
+              capabilities. This <a href="https://github.com/jorgejc2/PlutoSDR" target="_blank" rel="noopener noreferrer">link</a> is to my github page that contains scripts that can be run on a Pluto and has instructions on how to set one up. 
+            </p>
+            <p>
+              Click the bottom right link to learn more about my summer project experience and how I was able to tackle my project head on!
             </p>
           </div>
 
           <img src="../../assets/pluto_inperson.jpg" alt="In person ADALM-PLUTO">
 
+        </div>
+
+        <div class="coming_soon" *ngIf="curr_project == project_names.length - 1">
+          <p>Nothing here yet :(</p>
         </div>
         
 
@@ -361,7 +371,7 @@
       <svg xmlns="http://www.w3.org/2000/svg"
         width="9.72222in" height="9.72222in"
         viewBox="0 0 875 875">
-          <path id="rightarrw"
+          <path id="rightarrw" (click)="nextProject()"
                 fill="none" stroke="black" stroke-width="1"
                 d="M 298.00,270.00
                   C 303.96,274.31 308.36,280.45 313.13,286.00
@@ -393,6 +403,11 @@
 </div>
 
 <div class="gallery">
+  <div class="gallery_bck"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
   <div class="gallery-photo-info">
       <p>
         Here's information about the phto you're currently looking at !!
@@ -402,30 +417,46 @@
   <div class="gallery-content">
     <!-- use ngfor and a list of image paths to alter every image element -->
     <!-- each image will have a click function to display its info, but the biggest img will flip over with info on its back -->
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
-    <p>hi</p>
+    <div><img src="../../assets/gallery_photos/chicago_bday_lunch.jpg" alt="Chicago bday lunch"></div>
+    <!-- <img src="../../assets/gray_background.png" alt="gray fill color"> -->
+    <div><img src="../../assets/gallery_photos/first_internship_cointerns.jpg"></div>
+    <div><img src="../../assets/gallery_photos/moto_drone_tester.jpg" alt="Moto drone tester"></div>
+    <div><img src="../../assets/gallery_photos/drivein_movies.jpg" alt="drive in movies watching Pixar's Buzz Lightyear"></div>
+    <div><img src="../../assets/gallery_photos/bday_before_college.jpeg" alt="Birthday before college starting" style="object-fit: contain;"></div>
+    <div style="background-color: aqua;"></div>
+    <div><img src="../../assets/gallery_photos/chicago_planetarium_lakeside.jpg" alt="sitting on the lakeside of the Chicago planetarium"></div>
+    <div><img src="../../assets/gallery_photos/drivein_movies_2.jpg" alt="drive in movie set up"></div>
+    <div><img src="../../assets/gallery_photos/moto_chicago_trip_rooftop.jpg" alt="apartment rooftop view"></div>
+    <div><img src="../../assets/gallery_photos/chicago_marianos_rooftop.jpg" alt="Marianos Chicago rooftop"></div>
+    <div><img src="../../assets/gallery_photos/eceb_sunset.jpg" alt="sunset views from the eceb"></div>
+    <div><img src="../../assets/gallery_photos/first_solarcar_meeting.jpg" alt="solar car onboarding"></div>
+    <div><img src="../../assets/gallery_photos/asl_hand.jpg" alt="asl hand" style="object-fit: contain;"></div>
+    <div><img src="../../assets/gallery_photos/physics_iolab.jpg" alt="phyics iolab"></div>
+    <div><img src="../../assets/gallery_photos/lego_date.jpg" alt="lego date"></div>
+    <div><img src="../../assets/gallery_photos/ece120_lab.jpg" alt="ece120 lab"></div>
+    <div><img src="../../assets/gallery_photos/moto_chicago_inoffice.jpg" alt="Working in the Moto Chicago office" style="object-fit: contain;"></div>
+    <div><img src="../../assets/gallery_photos/lego_brickheadz.jpg" alt="lego brickheadz"></div>
+    <div><img src="../../assets/gallery_photos/isr_lobby.jpg" alt="isr lobby"></div>
+    <div><img src="../../assets/gallery_photos/loomis_outdoors.jpg" alt="outdoors at loomis"></div>
+    <div><img src="../../assets/gallery_photos/dinner_potluck.jpg" alt="dinner potluck"></div>
+    <div style="background-color: green;"></div>
+    <div><img src="../../assets/gallery_photos/uiuc_quad_night.jpg" alt="nighttime at uiuc"></div>
+    <div><img src="../../assets/gallery_photos/garage_rooftop_photoshoot.jpg" alt="garage photoshoot"></div>
+    <div><img src="../../assets/gallery_photos/batterybox_connectors.jpg"></div>
+    <div><img src="../../assets/gallery_photos/batterybox_connectors_2.jpg"></div>
+    <div><img src="../../assets/gallery_photos/dorm_halloween.jpg" alt="dorm halloween"></div>
+    <div style="background-color: orange;"></div>
+    <div><img src="../../assets/gallery_photos/winter_covid.jpg" alt="covid winter break"></div>
+    <div><img src="../../assets/gallery_photos/moto_chicago_lakesideshore.jpg" alt="chicago lakeshore"></div>
+    <div><img src="../../assets/gallery_photos/classes_outside.jpg" alt="virtual classes on the quad"></div>
+    <div><img src="../../assets/gallery_photos/bourbanaise_sunet.jpg" alt="sunset in bourbanaise"></div>
+    <div><img src="../../assets/gallery_photos/mika_sushi_date.jpg" alt="sushi date" style="object-position: 50% 20%;"></div>
+    <div><img src="../../assets/gallery_photos/quad_reading.jpg" alt="reading on the quad"></div>
+    <div><img src="../../assets/gallery_photos/pumpkin_carving.jpg" alt="pumpkin carving night"></div>
+    <div><img src="../../assets/gallery_photos/babyyodas_studysession.jpg" alt="studying with baby yodas"></div>
+    <div style="background-color: aqua;"></div>
+    <div><img src="../../assets/gallery_photos/brian_photographing.jpg" alt="brian taking pictures"></div>
+    <div><img src="../../assets/gallery_photos/dormroom_sunset.jpg" alt="sunset in the dorm room"></div>
   </div>
 </div>
 
