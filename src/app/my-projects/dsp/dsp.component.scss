@@ -1,32 +1,4 @@
-/* later test if these media queries work well on mobile devices */
 
-/* for mobile */ 
-@media screen and (max-width: 767px) {
-    /* 
-    basic media query for respective device. In to this media query, css code
-    can cover the both landscape and portrait view
-    */
-}
-@media screen and (min-width:320px) and (orientation: landscape) {
-    /*
-    This orientation media query. In to this query you can specify more about css code
-    for landscape view
-    */
-}
-
-/* for tablet */
-@media screen and (max-width: 1024px) {
-    /* 
-    basic media query for respective device. In to this media query, css code
-    can cover the both landscape and portrait view
-    */
-}
-@media screen and (min-width: 768px) and (max-width:1024px) and (orientation: landscape) {
-    /*
-    This orientation media query. In to this query you can specify more about css code
-    for landscape view
-    */
-}
 
 /* desktop */
 
@@ -112,6 +84,7 @@
 }
 
 .main-content {
+    width: 100%;
     background-color: #fafafa;
     padding: 50px 5%;
     margin-bottom: 200px;
@@ -155,4 +128,66 @@
     width: 100%;
     height: 100px;
     background: linear-gradient(to bottom, #F4F4F4, #F4F4F4 50%, #34447C 100%);
+}
+
+/* later test if these media queries work well on mobile devices */
+
+/* for mobile */ 
+@media screen and (max-width: 767px) {
+    /* 
+    basic media query for respective device. In to this media query, css code
+    can cover the both landscape and portrait view
+    */
+    .project {
+        grid-template-columns: 1fr;
+        // grid-template-rows: auto;
+        max-width: 767px;
+    }
+
+    .main-content {
+        max-width: 767px;
+        padding: 0 10px;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    .main-content img {
+        max-width: 100%;
+        visibility: hidden;
+    }
+
+    .main-content pre {
+        max-width: 100%;
+        visibility: hidden;
+    }
+
+    .contents {
+        visibility: hidden;
+    }
+
+    .right-space {
+        visibility: hidden;
+    }
+}
+@media screen and (min-width:320px) and (orientation: landscape) {
+    /*
+    This orientation media query. In to this query you can specify more about css code
+    for landscape view
+    */
+}
+
+/* for tablet */
+@media screen and (max-width: 1024px) {
+    /* 
+    basic media query for respective device. In to this media query, css code
+    can cover the both landscape and portrait view
+    */
+}
+@media screen and (min-width: 768px) and (max-width:1024px) and (orientation: landscape) {
+    /*
+    This orientation media query. In to this query you can specify more about css code
+    for landscape view
+    */
 }
