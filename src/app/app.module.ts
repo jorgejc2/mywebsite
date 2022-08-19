@@ -56,7 +56,7 @@ const routerOptions: ExtraOptions = {
 export class AppModule { 
 
   constructor(router: Router, viewportScroller: ViewportScroller) {
-    viewportScroller.setOffset([0, 50]);
+    viewportScroller.setOffset([0, 75]);
     router.events.pipe(filter(e => e instanceof Scroll)).subscribe((e: Scroll) => {
       if (e.anchor) {
         // anchor navigation

@@ -673,9 +673,9 @@
 }
 
 .timeline-detailed-fadein p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: 'Roboto', sans-serif;
-  font-weight: 550;
+  font-weight: 450;
   color: white;
   transition: opacity 2s linear;
   margin: 20px 0px 0px 0px;
@@ -955,14 +955,29 @@
   border-radius: 42px;
   padding: 10%;
   background: rgba(255, 255, 255, 0.6);
+  justify-items: center;
+  text-align: center;
 }
 
 .gallery-description p {
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: rgb(89, 89, 89);
   letter-spacing: .05rem;
+}
+
+#showGallery {
+  display: inline-block;
+  background: rgb(0, 240, 200);
+  border-radius: 43px;
+  padding: 10px;
+  height: auto;
+  margin-top: 10%;
+}
+
+#showGallery p{
+  margin: 0px;
 }
 
 .gallery-content {

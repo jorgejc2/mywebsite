@@ -1,11 +1,11 @@
 .main {
     padding: 50px 10%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     column-gap: 10px;
     justify-items: center;
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     background-color: #34447C;
 }
 
@@ -27,6 +27,14 @@
 
 .description p {
     font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(104, 102, 102);
+    letter-spacing: .05rem;
+}
+
+.connections p {
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: rgb(104, 102, 102);

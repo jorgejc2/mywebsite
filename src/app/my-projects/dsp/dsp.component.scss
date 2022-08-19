@@ -103,9 +103,18 @@
     cursor: pointer;
 }
 
+.contents p, .contents li {
+    font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(104, 102, 102);
+    letter-spacing: .05rem;
+}
+
 .main-content {
     background-color: #fafafa;
     padding: 50px 5%;
+    margin-bottom: 200px;
 }
 
 .main-content p {
@@ -140,4 +149,10 @@
     position: absolute;
     left: 30%;
     top: 200px;
+}
+
+.toFooter {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #F4F4F4, #F4F4F4 50%, #34447C 100%);
 }

@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private viewportScroller: ViewportScroller) { }
+  // constructor() {}
 
   ngOnInit(): void {
+  }
+
+  navigateTo(el: string) {
+    this.router.navigate(['/'], { fragment: el });
+    return;
   }
 
 }

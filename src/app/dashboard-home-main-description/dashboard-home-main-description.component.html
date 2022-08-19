@@ -52,7 +52,7 @@
 </div>
 </div> -->
 
-<div class="home-description">
+<div class="home-description" id="targetHome">
   <div class="left-home-description">
     <div class="hello-world" [ngsReveal]="{ reset: true, delay: 50, origin: 'left', distance: '500px'}">
       <p>Hello World!</p>
@@ -75,26 +75,9 @@
     <img class="main-profile" src="../../assets/desc7.jpeg">
     <div class="profile-shadow"></div>
   </div>
-  <!-- <div class="home-description-col-two home-description-items" [ngsReveal]="{ reset: true, delay: 300, origin: 'left', distance: '60px'}">Placing Image Here</div> -->
-  <!-- <div class="home-description-col-three">
-
-    <swiper [navigation]="true" class="mySwiper" style="position:relative; top:0px; left:0px;">
-      <ng-template swiperSlide><img src="../../assets/desc1.jpg" alt="home pic one"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc2.jpg" alt="home pic two"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc3.jpg" alt="home pic three"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc4.jpg" alt="home pic four"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc5.jpeg" alt="home pic five"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc6.jpg" alt="home pic six"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc7.jpeg" alt="home pic seven"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc8.jpg" alt="home pic eight"></ng-template
-      ><ng-template swiperSlide><img src="../../assets/desc8.jpg" alt="home pic nine"></ng-template>
-    </swiper>
-  </div> -->
-
-
 </div>
 
-<div class="about-me">
+<div class="about-me" id="targetAboutMe">
 
   <div class="left-about-me" [ngsReveal]="{ reset: true, delay: 50, origin: 'left', distance: '500px'}">
     <div class="about-me-title">
@@ -166,18 +149,6 @@
     <div class="about-me-slideshow-shadow">
 
     </div>
-
-    <!-- <swiper [navigation]="true" class="mySwiper">
-      <ng-template swiperSlide  class="swiper-slide"><img src="../../assets/desc1.jpg" alt="home pic one"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc2.jpg" alt="home pic two"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc3.jpg" alt="home pic three"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc4.jpg" alt="home pic four"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc5.jpeg" alt="home pic five"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc6.jpg" alt="home pic six"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc7.jpeg" alt="home pic seven"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc8.jpg" alt="home pic eight"></ng-template
-      ><ng-template swiperSlide class="swiper-slide"><img src="../../assets/desc8.jpg" alt="home pic nine"></ng-template>
-    </swiper> -->
   </div>
   <div class="right-about-me" [ngsReveal]="{ reset: true, delay: 20, origin: 'right', distance: '500px'}">
     <div class="about-me-desc1">
@@ -267,7 +238,7 @@
   
 </div>
 
-<div class="college-timeline">
+<div class="college-timeline" id="targetTimeline">
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
@@ -290,7 +261,9 @@
 
   <div [ngClass]="{'timeline-detailed-fadein': timeline_visible && timeline_init, 'timeline-detailed-fadeout': !timeline_visible && timeline_init, 'timeline-detailed-init': !timeline_init}">
     <div class="timeline-detailed-content" *ngIf="timeline_visible && timeline_init">
-      <p >{{ timeline_box_list[timeline_box_selection].description }}</p>
+      <div class="timeline-detailed-content-box">
+        <p >{{ timeline_box_list[timeline_box_selection].description }}</p>
+      </div>
       <div class="timeline_img_holder" *ngIf="timeline_box_list[timeline_box_selection].imagePath != 'none'">
         <img
         src="{{ timeline_box_list[timeline_box_selection].imagePath }}"
@@ -302,7 +275,7 @@
 
 </div>
 
-<div class="projects" id="targetProject">
+<div class="projects" id="targetProject" #targetProject>
   <h1>My Projects</h1>
   <div class="project-slideshow">
     <h2>{{ project_names[curr_project] }}</h2>
@@ -365,8 +338,6 @@
         <div class="coming_soon" *ngIf="curr_project == project_names.length - 1">
           <p>Nothing here yet :(</p>
         </div>
-        
-
       </div>
       <svg xmlns="http://www.w3.org/2000/svg"
         width="9.72222in" height="9.72222in"
@@ -402,7 +373,7 @@
   </div>
 </div>
 
-<div class="gallery">
+<div class="gallery" id="targetGallery">
   <div class="gallery_bck"></div>
   <div class="cube"></div>
   <div class="cube"></div>
@@ -465,13 +436,13 @@
       My goal is to one day get into photography and buy a professional camera, but in the mean time I'm sticking to taking pictures 
       of the moments around me and sunsets !!
     </p>
-    <p (click)="showGallery()">
-      Show Gallery
-    </p>
+    <div id="showGallery" (click)="showGallery()">
+      <p>
+        Show Gallery
+      </p>
+    </div>
   </div>
   <div class="gallery-content" *ngIf="displayGallery">
-    <!-- use ngfor and a list of image paths to alter every image element -->
-    <!-- each image will have a click function to display its info, but the biggest img will flip over with info on its back -->
     <div *ngFor="let gallery_item of gallery_items; let idx=index" [style]="gallery_item.image ? '' : gallery_item.style" (click)="imgDetails(idx)">
       <img *ngIf="gallery_item.image" [src]="gallery_item.url" [alt]="gallery_item.alt" [style]="gallery_item.style">
     </div>
@@ -479,8 +450,3 @@
 </div>
 
 <div class="toFooter"></div>
-
-<!-- <div class="pixel_game" >
-  <img src="../../assets/pixelsunset1.jpg" appImgDim>
-  <div class="rand_text">Hello world</div>
-</div> -->

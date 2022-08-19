@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,7 +10,7 @@ declare var PR; // access PR global var set by Google code prettify script
 })
 export class DspComponent implements OnInit, AfterViewChecked {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
   }
@@ -24,9 +25,7 @@ export class DspComponent implements OnInit, AfterViewChecked {
   }
 
   goIntro(el: any) {
-    console.log(el)
-    console.log(typeof(el))
-    el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    this.viewportScroller.scrollToAnchor(el.id);
   }
 
 }
