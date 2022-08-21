@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class DashboardHeaderComponent implements OnInit {
 
   constructor(private router: Router, private viewportScroller: ViewportScroller) { }
-  // constructor() {}
 
   ngOnInit(): void {
   }

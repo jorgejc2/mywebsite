@@ -140,13 +140,11 @@
     */
     .project {
         grid-template-columns: 1fr;
-        // grid-template-rows: auto;
-        max-width: 767px;
     }
 
     .main-content {
-        max-width: 767px;
         padding: 0 10px;
+        max-width: 100vw;
     }
 
     .main-content p {
@@ -154,16 +152,16 @@
     }
 
     .main-content img {
-        max-width: 100%;
-        visibility: hidden;
+        max-width: 90vw;
+        // visibility: hidden;
     }
 
     .main-content pre {
-        max-width: 100%;
-        visibility: hidden;
+        max-width: 90vw;
+        // visibility: hidden;
     }
 
-    .contents {
+    .table-contents, .contents {
         visibility: hidden;
     }
 
@@ -179,11 +177,43 @@
 }
 
 /* for tablet */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width:1024px) {
     /* 
     basic media query for respective device. In to this media query, css code
     can cover the both landscape and portrait view
     */
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 0 10px;
+        max-width: 100vw;
+        margin-bottom: 50px;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    .main-content img {
+        max-width: 90vw;
+        // visibility: hidden;
+    }
+
+    .main-content pre {
+        max-width: 90vw;
+        // visibility: hidden;
+    }
+
+    .table-contents, .contents {
+        visibility: hidden;
+    }
+
+    .right-space {
+        visibility: hidden;
+    }
+
 }
 @media screen and (min-width: 768px) and (max-width:1024px) and (orientation: landscape) {
     /*
