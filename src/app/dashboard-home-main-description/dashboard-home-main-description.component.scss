@@ -594,13 +594,14 @@
   position: relative;
 }
 
-.timeline-stem-body {
+.timeline-body {
+  position: absolute;
   background-color: #324DDB;
   width: 10%;
   height: 100%;
 }
 
-.timeline-stem-bulb {
+.timeline-bulb {
   background-color: #324DDB;
   border-radius: 50%;
   width: 20%;
@@ -609,7 +610,51 @@
   position: absolute;
 }
 
-.timeline-stem-message {
+
+
+.timeline-stem:nth-child(even) {
+  grid-row: 13/21;
+  grid-column: span 2;
+}
+
+.timeline-stem:nth-child(odd) {
+  grid-row: 22/29;
+  grid-column: span 2;
+}
+
+.timeline-bulb:nth-child(even) {
+  top: -10%;
+}
+
+.timeline-bulb:nth-child(odd) {
+  bottom: -10%;
+}
+
+.bulb-timeline:nth-child(even) {
+  top: -10%;
+}
+
+.bulb-timeline:nth-child(odd) {
+  bottom: -10%;
+}
+
+.timeline-body:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-body:nth-child(odd) {
+  left: 0%;
+}
+
+.timeline-message:nth-child(even) {
+  top: -50%;
+}
+
+.timeline-message:nth-child(odd) {
+  bottom: -20%;
+}
+
+.timeline-message {
   background-color: #55B9FB;
   border-radius: 15%;
   padding: 0.5rem;
@@ -620,11 +665,11 @@
   height: 100%;
 }
 
-.timeline-stem-message p {
+.timeline-message p {
   margin: 0px;
 }
 
-.timeline-stem-message:hover {
+.timeline-message:hover {
   cursor: pointer;
 }
 
@@ -1137,6 +1182,11 @@ background: #555;
   .about-me {
     grid-template-columns: 1fr;
     padding: 50px 2.5px;
+    position: relative;
+  }
+
+  .about-me-title {
+    position: relative;
   }
 
   .about-me-title p {
@@ -1146,13 +1196,22 @@ background: #555;
   }
 
   .about-me-slideshow {
-    top: 40%;
-    height: 60%;
+    // top: 40%;
+    // height: 60%;
+    width: 85%;
+    height: 200px;
+    position: relative;
+  }
+
+  .left-about-me {
+    width: 100%;
   }
 
   .about-me-slideshow-shadow {
-    top: 42%;
-    height: 60%;
+    top: 35%;
+    left: 15%;
+    width: 85%;
+    height: 200px;
   }
 
   .about-me-cross {
@@ -1165,15 +1224,21 @@ background: #555;
     font-weight: 400;
   }
 
-  // .about-me-desc1 {
-  //   margin-top: 300px;
-  // }
+  .about-me-desc1 {
+    margin: auto auto 50px auto;
+  }
 
-  // .about-me-desc1, .about-me-desc2 {
-  //   grid-template-columns: 1fr;
-  //   grid-template-rows: auto;
-  //   position: relative;
-  // }
+  .about-me-desc2 {
+    margin: auto;
+  }
+
+  .about-me-desc1, .about-me-desc2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0% 0% 0% 0% 1fr 0% 0% 0% 0% 0%;
+    position: relative;
+    justify-self: center;
+    height: 45%;
+  }
 
   .center {
     border-radius: 15px;
@@ -1184,6 +1249,13 @@ background: #555;
     width: 0%;
     height: 0%;
   }
+
+/* modification to the timeline page */ 
+
+.timeline-root {
+  grid-column: 1/2;
+  grid-row: 3/24;
+}
 
 }
 @media screen and (min-width:320px) and (orientation: landscape) {

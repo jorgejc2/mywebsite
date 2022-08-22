@@ -161,7 +161,7 @@
           My only issue at the time was that I had never coded in my life and felt I wasn’t capable and didn’t have the knowledge to do so. 
         </p>
       </div>
-      <div class="side"></div><div class="side"></div><div class="side"></div><div class="bottom-right"></div>
+      <div class="side"></div><div class="bottom-left"></div><div class="side"></div><div class="bottom-right"></div>
     </div>
     <div class="about-me-desc2">
       <div class="top-left"></div><div class="side"></div><div class="top-right"></div><div class="side"></div>
@@ -176,7 +176,7 @@
           I’ve grown a deep appreciation for computers and the impact they can have around us. 
         </p>
       </div>
-      <div class="side"></div><div class="side"></div><div class="side"></div><div class="bottom-right"></div>
+      <div class="side"></div><div class="bottom-left"></div><div class="side"></div><div class="bottom-right"></div>
     </div>
   </div>
 
@@ -249,13 +249,43 @@
 
   <div class="timeline-root"></div>
 
-  <div class="timeline-stem" *ngFor="let timeline_box of timeline_box_list" [ngStyle]="timelineGridPlacement(timeline_box.id)">
+  <!-- <div class="timeline-stem" *ngFor="let timeline_box of timeline_box_list">
     <div class="timeline-stem-body"></div>
-    <div class="timeline-stem-bulb" [ngStyle]="timelineBulbPlacement(timeline_box.id)"></div>
-    <div class="timeline-stem-message" (click)="toggleTimelineInfo(timeline_box.id)" [ngStyle]="timelineInfoPlacement(timeline_box.id)">
+    <div class="timeline-stem-bulb"></div>
+    <div class="timeline-stem-message" (click)="toggleTimelineInfo(timeline_box.id)">
       <p>{{ timeline_box.title }}</p>
       <p>{{ timeline_box.date }}</p>
       <p>{{ timeline_box.summary }}</p>
+    </div>
+  </div> -->
+
+  <div class="timeline-stem">
+    <div class="timeline-body"></div>
+    <div class="timeline-bulb body-timeline"></div>
+    <div class="timeline-message">
+      <p>hi</p>
+      <p>hi</p>
+      <p>hi</p>
+    </div>
+  </div>
+
+  <div class="timeline-stem">
+    <div class="timeline-body body-timeline"></div>
+    <div class="timeline-bulb"></div>
+    <div class="timeline-message">
+      <p>hi</p>
+      <p>hi</p>
+      <p>hi</p>
+    </div>
+  </div>
+
+  <div class="timeline-stem">
+    <div class="timeline-body body-timeline"></div>
+    <div class="timeline-bulb"></div>
+    <div class="timeline-message">
+      <p>hi</p>
+      <p>hi</p>
+      <p>hi</p>
     </div>
   </div>
 
