@@ -60,42 +60,29 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
   timeline_visible: boolean = false;
   timeline_init: boolean = false;
 
-  timeline_box_list: TimelineBox[] = [
-    new TimelineBox(0, "Computer Engineer", "Fall 2019", "Started college",
+  timeline_box_list: string[] = [
     "In the Fall of 2019, I started my journey as a computer engineer at the University of Illinois. I vividly remember how excited I "
-    +"was being in a new environment and finally learning the basic concepts in my ECE 120 course.", 
-    "../../assets/desc1.jpg"),
-    new TimelineBox(1, "SHPE", "Fall 2019", "Joined as member", 
+    +"was being in a new environment and finally learning the basic concepts in my ECE 120 course.",
     "SHPE is short for the Society of Hispanic Professional Engineers. When I first joined this organization, I mainly participated in the community service events. " +
     "One of the community service events we did was bringing awareness and fundraising for the homeless population in the Urbana Champaign local area. " +
     "Eventually, I transitioned to a branch of the organization called SHPE tech which gave members an outlet to be creative and come up with an engineering idea that other " +
     "members of SHPE could have work on. In my case, I joined a project at the time that involved putting together a mechanically programmable hand that was meant " +
     "to translate words to ASL or American Sign Language. I was immediatly put as the lead of the electrical engineering team where I created the code base in C++ and programmed " +
     "Arduino motors to move the fingers and joints of the hand. ", 
-    "none"), 
-    new TimelineBox(2, "Illini Solar Car", "Fall 2020", "Joined as mechanical member",
     "I joined as a mechanical member of the team and contributed by helping design and 3D print the air intake plug for the car as well " +
     "the battery box connectors. The air intake plug was more of a filter to be inserted to the bottom of the car so that it could filter " +
     "out debris while still bringing in air to cool down the battery box of the car. The battery box connectors were the connections between the " + 
-    "the battery box and the power distribution system. Both of these parts were designed and 3D printed using Creo."
-    , "none"),
-    new TimelineBox(3, "Physics Learning Assistant", "Spring 2021", "Became an LA for Physics 100", 
+    "the battery box and the power distribution system. Both of these parts were designed and 3D printed using Creo.",
     "As a physics learning assistant, i worked alongside other teaching assistants as well as Professor Morton to help delegate " +
     "discussions in Physics 100. In a typical discussion lab, the TA would do a quick conceptual review in the first five minutes, " +
     "and afterwards we would break the class up into groups. It was my role then to go to every group and try and help facilitate communication and ideas "+
     "so that every student could engage with the material.",
-    "none"),
-    new TimelineBox(4, "Motorola Solutions Intern", "Summer 2021", "Software Engineering Internship", 
     "I began my first internship with Motorola Solutions where I primarily worked on a backend database for a project called the " +
     "Application Status Portal. This web application showed the status of all the online services that Command Central suite provides. " +
     "Command Central is the umbrella name for all the safety products that Motorola Solutions offers to first responders. " +
     "I learned MySQL in order to manage the database with other interns and make sure that ",
-    "none"),
-    new TimelineBox(5, "Illini Solar Car", "Fall 2021", "Treasurer", 
     "I became the treasuer for Illini Solar Car and managed their financial resources using QuikBooks and revised purchase requests for " +
     "other members of the team. ",
-    "none"),
-    new TimelineBox(6, "Motorola Solutions Co-op", "Spring 2022", "Software Engineering Internship", 
     "I returned to Motorola Solutions as a part time intern during the school semester and worked as a full stack developer. " +
     "The name of the project was Recruiting Reimagined which was a web application creating using Angular to provide a clean solution " +
     "to Motorola Solution recruiters where they could manage potential candidates and collect resumes and information. " + 
@@ -105,8 +92,6 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     "event. The role of the recruiter was also included so that they could be better matched with a candidate depending on the role they were" +
     "potentially interested in. This role gave me the basic introduction and resources to web application development and immediately inspired me " +
     "to create this website portfolio and other Angular applications that I will be uploading soon.",
-    "none"),
-    new TimelineBox(7, "Motorola Solutions Intern", "Summer 2022", "Embedded Systems Intern",
     "I returned for a third internship with Motorola Solutions where I got invaluable embedded systems and digital signal processing " +
     "experience. I was tasked with creating a 'learning' module for a software defined radion that controlled the radio to listen to radio " +
     "frequency activity for hours on end, and then process and characterize the signals it recorded in those hours. Characterization involed " +
@@ -114,14 +99,14 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     "Processing the signals especially was the most interesting part of the project to me because it required me to do research and solidify my understanding " +
     "of digital signal processing while also using data structures to better manage the memory resources of the radio since it was very limited. " +
     "You can learn more details about this project and my key takeaways in the project section below.",
-    "none"),
-    new TimelineBox(8, "Senior", "Fall 2022", "",
     "As I begin my last year of my undergrad, I look forward to classes that I'm taking such as machine learning, applied parallel programming, " +
     "the principles of safe autonomy, and computer architecture. By this point, I feel proud of all the experience I've been able to gain when in the "+
     ", I started off as a freshman who had never coded before. I am more focused on side projects and hope to be able to share them on this " +
-    "website very soon.",
-    "none")
+    "website very soon."
+  ];
 
+  timeline_box_list_images: string[] = [
+    "","","","","","","","",""
   ];
 
   timeline_box_selection: number = 0;
@@ -245,8 +230,11 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     return;
   }
 
-  toggleTimelineInfo(id: number) {
+  toggleTimelineInfo(el: any) {
     // this.timeline_visible = !this.timeline_visible;
+    let el_id = el.id;
+    let digits = el_id.replace(/\D/g, '');
+    let id = Number(digits) - 1;
     this.timeline_visible = true;
     this.timeline_init = true;
     this.timeline_box_selection = id;
