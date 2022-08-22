@@ -179,32 +179,6 @@
   background-color: #1d1d1f;
  }
 
-@media (max-width: 912px) {
-    .home-description {   
-        display: grid;
-        grid-template-rows: 5fr 1fr;
-        // grid-auto-rows: minmax(70px, auto);
-    }
-
-    .home-description-col-one p {
-        font-size: small;
-        padding: 10px 20px;
-        margin: 0 auto;
-    }
-    .home-description-col-three {
-        grid-row: 3/4;
-    }
-  }
-
-  @media (min-width: 913px) {
-    .home-description {
-        // display: grid;
-        // grid-template-columns: 3fr 1fr;
-        // grid-auto-rows: minmax(70px, auto);
-    }
-
-  }
-
 .transition {
   height: 500px;
   width: 100%;
@@ -256,10 +230,12 @@
   // -webkit-backdrop-filter: blur(10px);
 }
 
+/* main introduction */ 
+
 .home-description {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 4rem;
     background: url("../../assets/home_desc_bck.png") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -366,7 +342,7 @@
 .about-me {
   position: relative;
   width: 100%;
-  height: 95vh;
+  min-height: 95vh;
   background-color: #252528;
   padding: 3rem 3rem 6rem 3rem;
   display: grid;
@@ -555,8 +531,7 @@
 .college-timeline {
   position: relative;
   width: 100%;
-  height: 100vh;
-  // background-color: #555555;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(48, 1fr);
@@ -727,7 +702,7 @@
   grid-template-rows: 5% 90%;
   row-gap: 5%;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #1D1D1F;
   padding: 3rem;
   overflow: hidden;
@@ -881,7 +856,7 @@
   grid-template-rows: 5% 90%;
   row-gap: 5%;
   width: 100%;
-  height: 95vh;
+  min-height: 95vh;
   // background-color: #555555;
   padding: 3rem;
   overflow: hidden;
@@ -1118,4 +1093,119 @@ background: #555;
   width: 100%;
   height: 100px;
   background: linear-gradient(to bottom, #555555, #555555 50%, #34447C 100%);
+}
+
+/* later test if these media queries work well on mobile devices */
+
+/* for mobile */ 
+@media screen and (max-width: 767px) {
+  /* 
+  basic media query for respective device. In to this media query, css code
+  can cover the both landscape and portrait view
+  */
+
+  /* modifications to the main page */
+
+  .home-description {
+    grid-template-columns: 1fr;
+  }
+
+  .main-text {
+    font-size: 1rem;
+  }
+
+  .star-text {
+    font-size: 0.8rem;
+  }
+
+  .left-home-description {
+    margin-bottom: 200px;
+  }
+
+  .main-profile {
+    grid-column: 2/38;
+    grid-row: 4/35;
+  }
+
+  .profile-shadow {
+    grid-column: 3/39;
+    grid-row: 5/36;
+  }
+
+  /* modifications to the about me page */ 
+
+  .about-me {
+    grid-template-columns: 1fr;
+    padding: 50px 2.5px;
+  }
+
+  .about-me-title p {
+    display: inline-block;
+    margin: auto;
+    white-space: nowrap;
+  }
+
+  .about-me-slideshow {
+    top: 40%;
+    height: 60%;
+  }
+
+  .about-me-slideshow-shadow {
+    top: 42%;
+    height: 60%;
+  }
+
+  .about-me-cross {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+  }
+
+  .right-about-me p {
+    font-weight: 400;
+  }
+
+  // .about-me-desc1 {
+  //   margin-top: 300px;
+  // }
+
+  // .about-me-desc1, .about-me-desc2 {
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: auto;
+  //   position: relative;
+  // }
+
+  .center {
+    border-radius: 15px;
+  }
+
+  .top-left, .top-right, .bottom-left, .bottom-right, .side {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+  }
+
+}
+@media screen and (min-width:320px) and (orientation: landscape) {
+  /*
+  This orientation media query. In to this query you can specify more about css code
+  for landscape view
+  */
+
+
+}
+
+/* for tablet */
+@media screen and (min-width: 768px) and (max-width:1024px) {
+  /* 
+  basic media query for respective device. In to this media query, css code
+  can cover the both landscape and portrait view
+  */
+
+}
+@media screen and (min-width: 768px) and (max-width:1024px) and (orientation: landscape) {
+  /*
+  This orientation media query. In to this query you can specify more about css code
+  for landscape view
+  */
 }
