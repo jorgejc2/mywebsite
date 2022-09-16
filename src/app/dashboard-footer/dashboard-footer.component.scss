@@ -10,7 +10,7 @@
 }
 
 .description, .content, .connections {
-    background-color: #2a3767;
+    background-color: #177ea3;;
     border-radius: 43px;
     padding: 20px 15px;
     width: 80%;
@@ -21,7 +21,7 @@
     font-size: 1.75rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    color: rgb(89, 89, 89);
+    color: white;
     letter-spacing: .05rem;
 }
 
@@ -29,7 +29,7 @@
     font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    color: rgb(104, 102, 102);
+    color: rgb(240, 240, 240);
     letter-spacing: .05rem;
 }
 
@@ -37,8 +37,12 @@
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    color: rgb(104, 102, 102);
+    color: rgb(240, 240, 240);
     letter-spacing: .05rem;
+}
+
+.connection-links {
+    color:rgb(240, 240, 240);
 }
 
 /* later test if these media queries work well on mobile devices */

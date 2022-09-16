@@ -58,7 +58,7 @@
       <p>Hello World!</p>
     </div>
     <div class="home-description-main" [ngsReveal]="{ reset: true, delay: 200, origin: 'left', distance: '500px'}">
-      <p class="main-text">I am currently studying computer engineering at the University of Illinois. My focus is on FPGA board design and I hope to one day work on processors in the future, but as of now I am exploring different technologies as I progress through my educational career.  I have full stack development skills which I’ve gained from Motorola Solutions, and have developed this website in Angular to enhance those skills further.  I have also focused a lot of my time on digitial signal processing and have helped create a  “Learning Node” for a radio device for Motorola Solutions. A description of my projects and educational experiences can be found below. 
+      <p class="main-text">I am currently studying computer engineering at the University of Illinois. My focus is on embedded systems and I hope to become an embedded software engineer in the future. As of now I am exploring different technologies as I progress through my educational career.  I have full stack development skills which I’ve gained from Motorola Solutions, and have developed this website in Angular to enhance those skills further.  I have also focused a lot of my time on digitial signal processing and have helped create a  “Learning Node” for a radio device for Motorola Solutions. A description of my projects and educational experiences can be found below. 
       </p>
       <p class="main-text">My motivation for putting this website together is to refine my front end development skills as 
         well as bring forth to everyone an in depth portfolio describing who I am and what I have
@@ -155,7 +155,7 @@
       <div class="top-left"></div><div class="side"></div><div class="top-right"></div><div class="side"></div>
       <div class="center">
         <p>
-          Taking AP Computer Science Principles in high school is what peaked my interest in programming and led me to pursue computer engineering. I was more enticed by the software aspect and seeing how much of a creative outlet it gave people. I remember my first dream was creating a gaming app for the app store and having it be trending. 
+          Taking AP Computer Science Principles in high school is what peaked my interest in programming and led me to pursue computer engineering. I was more enticed by the software aspect at the time and seeing how much of a creative outlet it gave people. I remember my first dream was creating a gaming app for the app store and having it trend. 
         </p>
         <p>
           My only issue at the time was that I had never coded in my life and felt I wasn’t capable and didn’t have the knowledge to do so. 
@@ -167,13 +167,13 @@
       <div class="top-left"></div><div class="side"></div><div class="top-right"></div><div class="side"></div>
       <div class="center">
         <p>
-          Despite that, I applied everywhere and thankfully got accepted to U of I.
+          Despite that, I applied and got accepted to U of I for computer engineering.
         </p>
         <p>
           The courses I’ve taken have only empowered me and helped me grow in confidence with my ability to code and work with hardware. 
         </p>
         <p>
-          I’ve grown a deep appreciation for computers and the impact they can have around us. 
+          I’ve grown a deep appreciation for computers and the impact they can have around us. All I hope for is a career where I can continue to learn and grow, and make a meaningful impact on whatever projects I tackle.
         </p>
       </div>
       <div class="side"></div><div class="bottom-left"></div><div class="side"></div><div class="bottom-right"></div>
@@ -238,26 +238,259 @@
   
 </div>
 
-<div class="college-timeline" id="targetTimeline">
-  <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div>
+<div class="college-timeline internship-timeline" id="targetTimeline">
+  <div class="bg bg-internship"></div>
+  <div class="bg bg-internship bg2"></div>
+  <div class="bg bg-internship bg3"></div>
 
-  <div class="timeline-title">
-    <p>My College Timeline</p>
+  <div class="timeline-title internship-title">
+    <p>My Internship Timeline</p>
   </div>
 
-  <div class="timeline-root"></div>
+  <img src="../../assets/motologo.png">
+  <div class="timeline_entry embedded_timeline">
+    <h2>Motorola Solutions -- Embedded Systems Engineer</h2>
+    <h3>Summer 2022</h3>
+    <p>
+      I innovated a software module which interacted with RF components in a radio to collect and perform data analytics 
+      with digital signal processing. 
+    </p>
+    <p>
+      Designed a graphical user interface with Python, Matplot, and Tkinter to seamlessly present 
+      vistual data to customers.
+    </p>
+    <span (click)="readMore(embeddedmore)" class="readmore" id="embeddedmoreTag" #embeddedmoreTag>Read More</span>
+    <p id="embeddedmore" #embeddedmore>
+      This internship allowed me to be creative and bring in a lot of prior knowledge from my other courses such as 
+      statistics and data structures. Due to the hardware constraints of the project, I ultimately had to find a way 
+      to capture hours of RF activity without eating memory and with subpar processing power. More details on this 
+      project can be found in below in the projects section.
+    </p>
+    <span (click)="readMore(embeddedmore)" class="readless" id="embeddedlessTag" #embeddedlessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry fullstack_timeline">
+    <h2>Motorola Solutions -- Full Stack Developer</h2>
+    <h3>Spring 2022</h3>
+    <p>
+      Independently developed the candidate and main application pages on Recruiting Reimagined using Angular.
+    </p>
+    <p>
+      Collaborated in a team of four to bring the registration phase of the application to the production stage. 
+    </p>
+    <span (click)="readMore(fullstackmore)" class="readmore" id="fullstackmoreTag" #fullstackmoreTag>Read More</span>
+    <p id="fullstackmore" #fullstackmore>
+      This project ultimately gave me the experience to create single page, dynamic web applications. Angular 
+      is also the tool I opted for using in creating this portfolio webpage. Following this internship, I continued to learning Angular 
+      and other aspects of a full stack project such as creating an API script from scratch and connecting an application to a backend 
+      database. I am currently working on a full stack web application with two other peers and the progress thus far 
+      will be posted soon under the projects section. 
+    </p>
+    <span (click)="readMore(fullstackmore)" class="readless" id="fullstacklessTag" #fullstacklessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry backend_timeline">
+    <h2>Motorola Solutions -- Backend Developr</h2>
+    <h3>Summer 2021</h3>
+    <p>
+      Improved the backend database of the Application Status Portal project using MySQL.
+    </p>
+    <p>
+      Produced a robust script using Python to automate raw data organization in the database. 
+    </p>
+    <span (click)="readMore(backendmore)" class="readmore" id="backendmoreTag" #backendmoreTag>Read More</span>
+    <p id="backendmore" #backendmore>
+      This internship gave me exposure to databases which I never had up until this point. Besides from working with 
+      new technologies, I also began to become familiar with how to work in an agile work environment with fellow 
+      employees, as well as using corporation tools such as Jira and Confluence. One interesting aspect about this internship is that the full-time software engineers we worked 
+      with were based in Krakow, Poland, so I quickly learned how essential communication was considering the time zone differences. 
+      It led me to becoming more prepared to come to them with questions I had with the Application Status Portal database, and their encouragement 
+      is what led me to learn Python for the first time to interact with the database. I ultimately created a backend script that used the MySQL API to help automate 
+      the process of organizing newly collected data on the statuses of Motorola's online services, and organizing them 
+      by region. 
+    </p>
+    <span (click)="readMore(backendmore)" class="readless" id="backendlessTag" #backendlessTag>Read Less</span>
+  </div>
+  </div>
+  <div class="college-timeline courses-timeline">
+  <div class="bg bg-courses"></div>
+  <div class="bg bg-courses bg2"></div>
+  <div class="bg bg-courses bg3"></div>
 
-  <!-- <div class="timeline-stem" *ngFor="let timeline_box of timeline_box_list">
-    <div class="timeline-stem-body"></div>
-    <div class="timeline-stem-bulb"></div>
-    <div class="timeline-stem-message" (click)="toggleTimelineInfo(timeline_box.id)">
-      <p>{{ timeline_box.title }}</p>
-      <p>{{ timeline_box.date }}</p>
-      <p>{{ timeline_box.summary }}</p>
+  <div class="timeline-title" style="margin-bottom: 100px;">
+    <p>My Courses Timeline</p>
+  </div>
+  <div class="timeline_entry ece484_entry">
+    <h2>Principles of Safe Autonomy (ECE 484)</h2>
+    <h3>Fall 2022</h3>
+    <p>
+      This class dives into the process and algorithms of designing autonomous systems where we get to use tools such as ROS, Gazebo, and OpenCV. Some of the main topics 
+      covered in the class include path planning, particle filtering, lane detection, and safety verification. <span (click)="readMore(ece484more)" class="readmore" id="ece484moreTag" #ece484moreTag>Read More</span>
+    </p>
+    <p id="ece484more" #ece484more>
+      For the final project, we are given the opportunity to program an autonomous car here on campus and my goal is tackle a project that handles lane detection in 
+      rough weather conditions.
+    </p>
+    <span (click)="readMore(ece484more)" class="readless" id="ece484lessTag" #ece484lessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry ece408_entry">
+    <h2>Applied Parallel Programming (ECE 408)</h2>
+    <h3>Fall 2022</h3>
+    <p>
+      In this course we have learned how to program processors that have massive computing resources. By learning how to parallelize operations such as convolutions 
+      and matrix mulitplications while also taking into consideration the hardware capabilities of modern GPU's offered by NVIDIA and AMD, we are able to increase 
+      the computational efficiency of many programs. <span (click)="readMore(ece408more)" class="readmore" id="ece408moreTag" #ece408moreTag>Read More</span><span id="ece408more" #ece408more>The projects are done in C and using the CUDA system. This class thus far has been one of my favorites since 
+      it helped me gain an understanding of how GPU's are able to massively increase the computational power of many computers, especially areas of programming that need 
+      that kind of computational ability such as machine learning programs.</span>
+    </p>
+    <span (click)="readMore(ece408more)" class="readless" id="ece408lessTag" #ece408lessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry cs440_timeline">
+    <h2>Artificial Intelligence (CS 440)</h2>
+    <h3>Fall 2022</h3>
+    <p>
+      This class is an introduction to many conecpts and techniques in AI, and covers methods used in search, classification, reasoning, and machine learning. 
+      Thus far, we have had one project that involved using Naive Bays to classify documents based on the words in the given document. <span (click)="readMore(cs440more)" class="readmore" id="cs440moreTag" #cs440moreTag>Read More</span>
+      <span id="cs440more" #cs440more>Given a training set and some labels, I created a bag of words model to determine on a test set whether or not a document was giving 
+      a postive or negative review for a movie. In order to increase the accuracy of the model, I included a mixture of unigrams and bigram words as well 
+      as a filter to remove stop words such as 'the, of, a, etc.' which led me to finding an accuracy as high as 91% on some test sets. </span>
+    </p>
+    <span (click)="readMore(cs440more)" class="readless" id="cs440lessTag" #cs440lessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry ece411_timeline">
+    <h2>Computer Architecture (ECE 411)</h2>
+    <h3>Fall 2022</h3>
+    <p>
+      This course covers the fundamentals of computer architecture at the ISA and microarchitecture level, to deepen our understanding of computer systems.
+      Alongside instruction, the course has mp's that are done using Verilog and Verdi is used to synthesis and debug our projects. <span (click)="readMore(ece411more)" class="readmore" id="ece411moreTag" #ece411moreTag>Read More</span>
+    </p>
+    <p id="ece411more" #ece411more>
+      As for the projects in this class, so far I have had to verify hardware components such as a multiplier and a FIFO module. I have also had to implement 
+      the rv32i instruction set of the RISC-V processor which so far has been my favorite project. The final project in the class is designing and implementing a complete 
+      out of order processor. 
+    </p>
+    <span (click)="readMore(ece411more)" class="readless" id="ece411lessTag" #ece411lessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry ece391_timeline">
+    <h2>Computer Systems Engineering (ECE 391)</h2>
+    <h3>Spring 2022</h3>
+    <p>
+      The prime goal of this class was to get students familiar with the design decisions and the implementation of Linux Kernel. Through this class,
+      I learned key concepts when developing a kernel such as how to organize a file system, displaying data through a VGA port in ModeX, configuring virtual memory, and how to implement a scheduler
+      so that a kernel can contain multiple tabs running programs simultaneously. <span (click)="readMore(ece391more)" class="readmore" id="ece391moreTag" #ece391moreTag>Read More</span><span id="ece391more" #ece391more>There were three mp's (mini projects) for this class where the first was in x86 
+      assembly and the last two were in C. The third mp was by far the biggest, taking up the second half of the semester, and with a group of four, we developed a basic 
+      linux kernel with the aforementioned concepts such as a file system, virtual memory, paging, and a scheduler. </span>
+    </p>
+    <span (click)="readMore(ece391more)" class="readless" id="ece391lessTag" #ece391lessTag>Read Less</span>
+  </div>
+  <div class="timeline_entry ece385_timeline">
+    <h2>Digital Systems Labratory (ECE 385)</h2>
+    <h3>Fall 2021</h3>
+    <p>
+      The core focus of this class was getting us familiar with FPGA boards and simulation synthesis with the assistance of Intel's Quartus. For hardware synthesis, we used System Verilog. 
+      In this class, we had a variety of mp's that involved configuring the FPGA to receive keyboard input and display to a monitor using a VGA port. 
+      I also became familiar with istantiating memory on an FPGA board and designing finite state machines for components on the FPGA board that needed to be 
+      communicated with over multiple clock cycles such as the SDRAM. <span (click)="readMore(ece385more)" class="readmore" id="ece385moreTag" #ece385moreTag>Read More</span><span id="ece385more" #ece385more>My biggest key takeaway from this class was learning how to debug hardware 
+      by analyzing waveform signals, and following close instructions to given documentation and timing requirements for components like the 
+      aforementioned SDRAM.</span>
+    </p>
+    <p id="ece385more_2" #ece385more_2>
+      This class had a final project where we were allowed to freely demonstrate our skills and knowledge of FPGA synthesis by implmeenting 
+      whatever we wanted, and our grade was based on the difficulty of our implementation. With a fellow peer, we created a hybrid of a Flappy Bird and 
+      Google's infamous, no-internet dinosaur game. This required us to set up communication between the FPGA and a keyboard and monitor, as well as 
+      using SDRAM to hold image frames of the game. The final project was a success, and the last thing we wish we could have set up was 
+      the onboard sound card on the FPGA so that there could be sound and music to go along with the game. 
+    </p>
+    <span (click)="readMore(ece385more)" class="readless" id="ece385lessTag" #ece385lessTag>Read Less</span>
+  </div>
+    <div class="timeline_entry cs225_timeline">
+    <h2>Introduction to Data Structures and Algorithms (CS 225)</h2>
+    <h3>Spring 2021</h3>
+    <p>
+      Here I learned how to analyze the complexity and runtime of various algorithms, and how to solve major paradigms using 
+      methods such as recursive programming, divide and conquer algorithms, dynamic programming, greedy algorithms, 
+      and graph algorithms. <span (click)="readMore(cs225more)" class="readmore" id="cs225moreTag" #cs225moreTag>Read More</span>
+    </p>
+    <p id="cs225more" #cs225more>
+      For my final project, I worked with three peers to create a program that was able to handle a massively large data set of nearly 8,000 airports and all of their established routes 
+      in 2018, and use that information to find the shortest distance to any other airport from the same data set. In order to do this, we utilized Djikstra's algorithm and found the distance 
+      between every pair of airports. We also implemented a strongly connected components algorithm in to find which airports in the data had redundant paths among each other. The github link 
+      to this project can be found <a href="https://github.com/jorgejc2/CS225-Final" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+    <span (click)="readMore(cs225more)" class="readless" id="cs225lessTag" #cs225lessTag>Read Less</span>
+  </div>
+</div>
+  <div class="college-timeline rso-timeline">
+    <div class="bg bg-rso"></div>
+    <div class="bg bg-rso bg2"></div>
+    <div class="bg bg-rso bg3"></div>
+    <div class="timeline-title" style="margin-bottom: 100px;">
+      <p>My RSO Timeline</p>
     </div>
-  </div> -->
+    <div class="timeline_entry vex_timeline">
+      <h2>VEXU Robotics -- Controls/Vision Programmer</h2>
+      <h3>Fall 2022 - Now</h3>
+      <p>
+        VEXU is a university level robotic competition where the tasks for a university's robots are different each year. For the current school year, 
+        the challenge is placing as many disks as possible in the opponents corner before the timer runs out. There is also a skills portion where a robot 
+        needs to make as many disks into a hoop as possible.
+      </p>
+      <span (click)="readMore(vexmore)" class="readmore" id="vexmoreTag" #vexmoreTag>Read More</span>
+      <div id="vexmore" #vexmore>
+      <p>
+        We are creating three robots, two for the main competitions, and one for the skills competition. My responsibility as a programmer is to 
+        write the controls for the robot to enable autonomous and man operated movement. For vission, we are using a Raspberry PI and external camera to 
+        identify the field and yellow disks so that for the autonomous portion, the robots are able to collect their disks and place them at their destination. 
+      </p>
+      <p>
+        I'm most excited for contributing to the vision of the robots since the Artificial Intelligence and especially my Principles of Safe Autonomy course are 
+        extremely relevant for computer vision and autonomous operations. Seeing this overlap between my courses and RSO project brings me a lot of energy since it makes 
+        me realize the potential we have of creating a robust robot that can place in the VEXU competition. 
+      </p>
+      </div>
+      <span (click)="readMore(vexmore)" class="readless" id="vexlessTag" #vexlessTag>Read Less</span>
+    </div>
+    <div class="timeline_entry solar_timeline">
+      <h2>Illini Solar Car -- Mechanical Engineer & Co-Treasurer</h2>
+      <h3>August 2021 - May 2022</h3>
+      <p>
+        This RSO resembles a start up in the sense that we are responsible for our own funding from the school as well as sponsors, 
+        and there are various divisions in the team from business, to marketing, to mechanical and electrical engineering.
+      </p>
+      <p>
+        Designed and 3D printed crucial components of the car such as the intake plug and battery box mounts using Creo.
+      </p>
+      <p>
+        Organized the monthly expenses using QuickBooks and revised team purchase requests.
+      </p>
+      <span (click)="readMore(solarmore)" class="readmore" id="solarmoreTag" #solarmoreTag>Read More</span>
+      <p id="solarmore" #solarmore>
+        That is no typo, I was a mechanical engineer for Illini Solar Car. My prime motivation was that I wanted to gain experience 
+        that I knew I would never encounter in my courses, and I saw Illini Solar as the perfect opportunity to do so. Even now, I've gained a lot of 
+        opportunities in my college career to expand my technical knowledge and it's such an enjoyable experience diving into something new. 
+        Thanks to Solar Car, I learned basic CAD programming with Creo, and what it meant to collaboratively work with fellow engineers to 
+        reach an end goal. 
+      </p>
+      <span (click)="readMore(solarmore)" class="readless" id="solarlessTag" #solarlessTag>Read Less</span>
+    </div>
+    <div class="timeline_entry shpe_timeline">
+      <h2>Society of Hispanic Engineers -- Software Engineer</h2>
+      <h3>January 2021 - May 2021</h3>
+      <p>
+        Led the software sub team to enable movement of a mechanical hand in response to keyboard input to translate American Sign Language. Created code base in C for the Arduino board and motors attached to the hand.
+      </p>
+      <span (click)="readMore(shpemore)" class="readmore" id="shpemoreTag" #shpemoreTag>Read More</span>
+      <p id="shpemore" #shpemore>
+        By this point, I had finally become familiar with C/C++ and was happy to be able to use those skills in practice by working with a 
+        mechanically printed hand. As the lead of the software team for the semester, I hosted meetings twice a week and helped my fellow 
+        peers catch up to speed with C/C++. Together, we sifted through Arduino documentation and it was always an amazing feeling seeing our progress 
+        translate into a hand capable of moving and responding to keyboard input. 
+      </p>
+      <span (click)="readMore(shpemore)" class="readless" id="shpelessTag" #shpelessTag>Read Less</span>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="timeline-root"></div>
 
   <div class="timeline-stem" id="stem_1" #stem_1 (click)="toggleTimelineInfo(stem_1)">
       <div class="timeline-body"></div>
@@ -273,7 +506,6 @@
   </div>
 
   <div class="timeline-stem" id="stem_2" #stem_2 (click)="toggleTimelineInfo(stem_2)">
-    <!-- dirty hack, items that need to be odd should be placed as an odd div in timeline-stem -->
       <div class="timeline-bulb"></div>
       <div class="timeline-body body-timeline"></div>
       
@@ -350,7 +582,6 @@
   </div>
 
   <div class="timeline-stem" id="stem_8" #stem_8 (click)="toggleTimelineInfo(stem_8)">
-      <!-- dirty hack, items that need to be odd should be placed as an odd div in timeline-stem -->
       <div class="timeline-bulb"></div>
       <div class="timeline-body body-timeline"></div>
       
@@ -387,9 +618,8 @@
         >
       </div>
     </div>
-  </div>
+  </div> -->
 
-</div>
 
 <div class="projects" id="targetProject" #targetProject>
   <h1>My Projects</h1>

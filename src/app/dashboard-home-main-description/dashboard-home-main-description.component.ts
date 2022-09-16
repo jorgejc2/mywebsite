@@ -52,8 +52,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     'slideshow-two',
     'slideshow-three',
     'slideshow-four',
-    'slideshow-five',
-    'slideshow-six'
+    'slideshow-five'  
   ]
   slideshow_num: number = 0;
 
@@ -314,6 +313,250 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   showGallery() {
     this.displayGallery = true;
+  }
+
+  courseInfoToggle = [false, false, false, false, false, false, false, false, false, false, false, false, false];
+
+  readMore(el: any) {
+    switch (el.id)  {
+      case 'ece391more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('ece391lessTag');
+        var idx = 0;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'ece385more': {
+        var moreText = document.getElementById(el.id);
+        var moreText2 = document.getElementById(`${el.id}_2`);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag = document.getElementById('ece385lessTag');
+        var idx = 1;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreText2.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreText2.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'ece411more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('ece411lessTag');
+        var idx = 2;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'ece484more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('ece484lessTag');
+        var idx = 3;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'ece408more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('ece408lessTag');
+        var idx = 4;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'cs440more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('cs440lessTag');
+        var idx = 5;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'cs225more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('cs225lessTag');
+        var idx = 6;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'embeddedmore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('embeddedlessTag');
+        var idx = 7;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'fullstackmore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('fullstacklessTag');
+        var idx = 8;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'backendmore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('backendlessTag');
+        var idx = 9;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'vexmore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('vexlessTag');
+        var idx = 10;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'shpemore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('shpelessTag');
+        var idx = 11;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'solarmore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('solarlessTag');
+        var idx = 12;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+    }
   }
 
 }
