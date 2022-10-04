@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
+## General
+
+The final product can be seen at [`www.jorgechavezuiuc.com`](jorgechavezuiuc.com). It is currently being hosted using AWS services, S3 Buckets and Cloudfront. This website is a personal portfolio of the coursework and projects I have taken on throughout my college career. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
