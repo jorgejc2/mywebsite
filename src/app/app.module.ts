@@ -17,10 +17,12 @@ import { DspComponent } from './my-projects/dsp/dsp.component';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs';
 import { DashboardFooterComponent } from './dashboard-footer/dashboard-footer.component';
+import { Ec420projectComponent } from './my-projects/ec420project/ec420project.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardHomeMainDescriptionComponent },
   { path: 'dsp', component: DspComponent },
+  { path: 'ece420finalproject', component: Ec420projectComponent }
 ];
 
 const routerOptions: ExtraOptions = {
@@ -41,6 +43,7 @@ const routerOptions: ExtraOptions = {
     WelcomeSequenceComponent,
     DspComponent,
     DashboardFooterComponent,
+    Ec420projectComponent,
   ],
   imports: [
     BrowserModule,

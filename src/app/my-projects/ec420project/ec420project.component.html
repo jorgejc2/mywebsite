@@ -1,0 +1,274 @@
+<div class="project-header">
+    <h1 class="hover-title">Digital Signal Processing</h1>
+    <img src="../../assets/ece391_maze.jpg" alt="ECE391 Maze Demo" style="width: 100%; height: 350px;">
+</div>
+<div class="project">
+    <div class="table-contents">
+        <div class="go-back">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="9.72222in" height="9.72222in"
+            viewBox="0 0 875 875">
+            <path id="Selection"
+                fill="none" stroke="white" stroke-width="1"
+                d="M 255.00,277.00
+                C 255.00,277.00 286.00,308.00 286.00,308.00
+                    286.00,308.00 304.00,326.00 304.00,326.00
+                    307.91,329.91 319.58,340.60 321.26,345.00
+                    323.91,351.93 320.83,359.77 313.00,360.77
+                    303.98,361.93 293.96,348.96 288.00,343.00
+                    288.00,343.00 235.00,290.00 235.00,290.00
+                    228.83,283.83 217.03,275.17 217.03,266.00
+                    217.03,263.86 217.20,261.94 218.17,260.00
+                    220.05,256.26 232.29,244.71 236.00,241.00
+                    236.00,241.00 284.00,193.00 284.00,193.00
+                    288.76,188.24 301.70,174.15 307.00,172.01
+                    316.03,168.36 325.04,175.55 322.19,185.00
+                    320.36,191.10 308.84,201.16 304.00,206.00
+                    304.00,206.00 286.00,224.00 286.00,224.00
+                    286.00,224.00 255.00,255.00 255.00,255.00
+                    255.00,255.00 469.00,255.00 469.00,255.00
+                    488.33,255.00 524.56,253.90 542.00,256.43
+                    564.56,259.70 585.68,268.66 604.00,282.16
+                    675.73,334.98 676.17,444.52 607.00,499.55
+                    595.65,508.58 581.74,516.32 568.00,521.00
+                    555.44,525.27 540.29,528.84 527.00,529.00
+                    475.81,529.60 427.34,506.18 402.31,460.00
+                    390.54,438.29 384.87,418.73 385.00,394.00
+                    385.04,386.21 387.82,380.05 397.00,381.23
+                    403.94,382.11 405.89,386.81 406.71,393.00
+                    406.71,393.00 407.29,405.00 407.29,405.00
+                    408.84,417.66 413.39,432.72 419.32,444.00
+                    440.08,483.47 480.59,507.52 525.00,507.00
+                    538.20,506.84 557.17,502.06 569.00,496.24
+                    585.27,488.25 598.95,478.13 610.54,464.00
+                    654.28,410.65 640.39,332.70 583.00,295.34
+                    566.27,284.45 543.03,277.03 523.00,277.00
+                    523.00,277.00 504.00,277.00 504.00,277.00
+                    504.00,277.00 467.00,277.00 467.00,277.00
+                    467.00,277.00 255.00,277.00 255.00,277.00 Z" fill="#fff"/>
+            </svg>
+            <p (click)="goProjects()">go back</p>
+        </div>
+        <div class="contents">
+            <p>Contents</p>
+            <ul>
+                <li (click)="goIntro(introduction)"><a>Introduction</a></li>
+                <li (click)="goIntro(summer_project)"><a>My Summer Project</a></li>
+                <li (click)="goIntro(resources)"><a>Resources</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <p id="introduction" #introduction>
+            <strong><u>Introduction</u></strong>
+        </p>
+        <p>
+            <strong>Digital Signal Processing was a topic I believed I would never figure out.</strong> That mentallity completely changed after interning with 
+            Motorola Solutions the summer of 2022. When I had applied for the internship, it was for a role in embedded systems, but as the start date of the internship 
+            approached, my manager gave me more details on the project I was going to work on. It was still in the realm of embedded systems, but little did I know that I 
+            would be working with a software defined radio.
+        </p>
+        <p>
+            In this article, I'd like to share a bit about my summer internship experience as well as details about the project I worked on. Of all the classes I've taken 
+            at UIUC, I felt as if the ones covering digital signal processing went over my head. That's why when I found out that I would be working with an SDR, I was scared but 
+            also excited knowing that I would have 12 full weeks to strengthen my understanding of a field that I didn't fully understand, and apply it to my project. Hopefully this 
+            article motivates others to give digital signal processing a chance and/or give ideas on how to tackle digital signal processing projects where device memory is a big concern. 
+            I'll describe the resources I studied in detail near the end. 
+        </p>
+        <p id="summer_project" #summer_project>
+            <strong><u>My Summer Project</u></strong>
+        </p>
+        <p>
+            The project I was tasked with was creating a software module in Python that would allow this software defined radio to be able to pick up 
+            radio frequency activity for hours on end, and then process the signals that the radio picked up and be able to describe their attributes. The attributes to be defined 
+            included the center frequency a signal was found at, what time a signal was found, its bandwidth, its amplitude in decibals, and how many times the signal appeared on and off. 
+            Why was this script so important to the device? Well, the main purpose of this software defined radio was to fake the presence of radio frequency activity. 
+            Radio frequencies are everywhere, and they are essential to communication. There are standards such as LTE, Bluetooth, TDMR, Wifi, and even the radio frequencies that 
+            come out of your microwave. It's difficult to try and mask the radio frequencies that you may use for communication. That's why this radio intentionally 
+            sent out radio frequency activity so that anyone trying to listen in on the RF activity going on, would be misled to thinking that a group of people have set up a base 
+            of communication in a certain location. In reality, this small device is just pumping out meaningless signals with no one near. 
+        </p>
+        <p>
+            I'm of course, exaggerating a little when I say that the SDR pumped out meaningless data. If it was purely meaningless data, others trying to listen in would 
+            eventually catch on. In order to emit signals, .wav audio files needed to be loaded onto the device while also configuring the device to pump out these .wav files at certain 
+            frequencies and intervals. It could also be loaded with pure IQ sample data and pump that information from the device as well. <a href="https://www.tek.com/en/blog/quadrature-iq-signals-explained#:~:text=Quadrature%20signals%2C%20also%20called%20IQ,as%20in%20complex%20signal%20analysis." target="_blank" rel="noopener noreferrer">IQ samples</a> are the digital samples 
+            of signals interpreted by an SDR. Loading data onto the SDR and configuring it may seem relatively simple to anyone with a background in digital 
+            signal processing, but this may not be the case for everyone. Therefore, this software module that I created made it so that anyone could use the device with ease. With a few 
+            switches available on the device, a user could simply put the radio into receive mode, conduct business as normal for a few hours while the radio picks up the radio activity 
+            near the user, and then the flip of another switch would take the radio out of receive mode, process the data it recorded, and begin transmitting what it found. Even better, 
+            since it begins transmitting the signals it was picking up in the first place, it looks as if the user who set up the device never left. 
+        </p>
+        <p>
+            <strong>Though the goal of my project was fairly straightforward, I didn't know where to begin.</strong> Though I had taken a class that was an introduction to digital 
+            signal processing (ECE 310 at UIUC), I believed that it focused so much on the mathematical and theoretical details, that it was difficult to interpret the applications 
+            of digital signal processing. Luckily, I had also taken a class concurrently with ECE 310 which was a lab section that dealt with looking more into the applications of 
+            digital signal processing (ECE 311). The class definitely helped, but the labs were purely in Python and at times, it seemed as if I was writing code to generate graphs 
+            while hoping the graph I created was the right one to receive the grade points. This may not have been the experience for everyone, but it most certainly was for me. 
+            As I settled into the cubicle that I would be working out of for the majority of the summer, my team left me with an <a href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview" target="_blank" rel="noopener noreferrer">ADALM-PLUTO SDR Learning Module</a> before actually letting 
+            me use the prototype they were developing on. With this small SDR and some scripts that they left me, I began playing around with it and looking for other resources to help 
+            reinforce the concepts of digital signal processing into my mind. For the first two weeks, I would create and run my own scripts to run on the Pluto while also reading articles, videos, 
+            and even writing code alongside <a href="https://pysdr.org/index.html" target="_blank" rel="noopener noreferrer">this website resource</a> that I believe is amazing for anyone who is trying to learn and apply digital signal processing (in order to code alongside this resource, an 
+            ADALM-PLUTO is required). After those two weeks of testing and learning, I felt as if I had finally developed a knowledgeable foundation to begin working on. The next step was 
+            planning and actually developing on the SDR prototype. 
+        </p>
+        <p>
+            When it came to planning, I had to take hardware limitations into account. Since this radio was a pretty small device, that meant it didn't carry lots of processing power 
+            or memory. Memory was most definitely the biggest issue, but even if I had worked on a device that had ample memory, iq data isn't cheap. By memory, I mean the RAM as well as the amount of 
+            storage that was available on the device. RAM dictated how many samples I could hold at once in a code, while storage dictated how many samples I could permanently save to the device 
+            (but these samples had to be loaded into the script, where they would then take up RAM). One of the goals for this radio was to be 
+            able to look at a large frequency spectrum at once, more specifically, at least 40 MHz of spectrum. The number of iq samples depends on how much spectrum of signal bandwidth you 
+            are analyzing, as well as the sample rate and how long you are recording samples. The sample rate is how many samples of iq data is recorded per second, and according to a theorem 
+            called the Nyquist Theorem, the sample rate should be at least twice that of the bandwidth of spectrum you are analyzing to prevent a phenomenon called aliasing (learn more about 
+            aliasing <a href="https://youtu.be/yWqrx08UeUs" target="_blank" rel="noopener noreferrer">here</a>). The benefit of IQ sampling is that every time a sample for a signal is recorded, 
+            a qudrate copy of the sample is created as well. This means that if we look at a spectrum of 40 MHz, then a sampling rate of 40 megasamples/second fulfills Nyquist's Sampling Theorem. 
+            Now, if we were to record a signal for only one second, then that means 40 megasamples of data is recorded, or 40 million samples. That's already an incredibly large amount, 
+            and the SDR radio is supposed to be able to listen to signal activity for hours on end. It's easy to see that this amount of samples can quickly eat up memory. Thus when it came to planning, 
+            I first needed to figure out how to record signals for hours on end without the radio crashing in a few seconds from memory overload. During my two weeks of looking at resources on 
+            digital signal processing, I ended up coming across something I never heard of before called Welch's Method that proved to be the key to fixing my memory issue.
+        </p>
+        <p>
+            <strong>Welch's Method is a digital signal processing technique used to approximate signals,</strong> and it was exactly what I needed. At a high level, it's very simple in that 
+            it replicates signal activity but without returning as many samples. The number of samples the method returns is configurable among other things. Thanks to the abundant amount of 
+            libraries available in Python, especially with signal processing, it was easy to incorporate this method into my scripts, and the results I found right away were astounding. To give more 
+            detail about how these samples are used to analyze signals, its important to know the difference between analyzing signals in the time and frequency domain. The time domain should be 
+            familiar to everyone. An example of a graph in the time domain would be if we wanted to look at the distance a car covers over a period of time. The x-axis could be minutes, and the 
+            y-axis could be the number of miles. But for signals, the graph becomes nearly meaningless to the human eye. The x-axis is still in time, and the y-axis is the amplitude of the signal. 
+            Yet, it takes much more effort to gauge the center frequency of a signal from the time-domain than the frequency-domain. Through a method called the Fast Fourier Transform method though, we could 
+            transform this signal graph from the time to the frequency domain. In the frequency domain, things become much clearer. I coded a quick example to display the results of a signal in its time 
+            domain versus its frequency domain. The bulk of the code is from <a href="https://pysdr.org/content/sampling.html" target="_blank" rel="noopener noreferrer">pysdr.org</a>, 
+            I just added an additional graph that shows the signal in the time domain. 
+        </p>
+        <img src="../../../assets/time_to_frequency.png" alt="Example of signal from time to frequency domain">
+        <!-- <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@JorgeChavez14/BasicSignalNoiseAndGraphing?lite=true"></iframe> -->
+        <p>
+            <i class="caption">Since matplotlib generates visual graphs, results may load slowly so I recommend running the code in your local IDE and viewing the results</i>
+        </p>
+        <p>
+            As you can see above, the signal in the time domain looks quite messy. It's actually a simple sin wave oscillating at a frequency rate of 50 Hz with noise surrounding the signal. 
+            With the human eye, its impossible to look at this graph, discern the sin wave, and count how many times it oscillates in one second to determine its frequency. After transforming the signal to the frequency 
+            domain though using the Fast Fourier Transform method, it becomes much more clear. The sin wave can be seen at 50 Hz on the x-axis where its amplitude is much greater than everything else 
+            surrounding it. An indication of how much of that frequency was present during the amount of time we captured the signal. Everything else in this frequency domain graph can be considered noise. Typically,
+            the threshold where noise congegrates is called the noise floor. 
+        </p>
+    <pre class="prettyprint lang-python linenums:1">    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import signal
+    
+    Fs = 300 # sample rate
+    Ts = 1/Fs # sample period
+    N = 1048576 # number of samples to simulate
+    psd_length = 256
+    
+    t = Ts*np.arange(N)
+    x = np.exp(1j*2*np.pi*50*t) # simulate sinusoid at 50 Hz
+    
+    n = (np.random.randn(N) + 1j*np.random.randn(N))/np.sqrt(2) # complex noise with unity power
+    noise_power = 2
+    r = x + n * np.sqrt(noise_power)
+    
+    PSD = (np.abs(np.fft.fft(r))/N)**2
+    PSD_log = 10.0*np.log10(PSD)
+    PSD_shifted = np.fft.fftshift(PSD_log)
+    f = np.arange(Fs/-2.0, Fs/2.0, Fs/N) # start, stop, step
+    
+    _, psd = signal.welch(r, Fs, 'hamming', psd_length, return_onesided=True, scaling='density', average='median')
+    psd_dB = np.fft.fftshift(10*np.log10((np.abs(psd)/psd.shape[0])**2)) + 44  # small miscalculation I made requiring an offset to correct the graph
+    f_welch = np.linspace(Fs/-2.0, Fs/2.0, psd_length)
+    
+    plt.figure(figsize=(18,12))
+    plt.subplot(121)
+    plt.plot(t, np.sin(2*np.pi*50*t))
+    plt.xlabel("Time [s]")
+    plt.ylabel("Amplitude")
+    plt.title("Time Domain")
+    plt.subplot(122)
+    plt.plot(f, PSD_shifted, label="FFT")
+    plt.plot(f_welch, psd_dB, label="Welch")
+    plt.xlabel("Frequency [Hz]")
+    plt.ylabel("Magnitude [dB]")
+    plt.title("Frequency Domain")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+    </pre>
+    <p>
+        <i class="caption">Note that the samples used are above 1 million yet Welch only outputs 256 samples</i>
+    </p>
+    <p>
+        Here, I've added more modifications where I still transform the signal to the frequency domain using a standard FFT, but I also transform it using 
+        Welch's method. Pay close attention to the variable labeled <strong>'psd_length'</strong>. This variable is used to set the output size of Welch's 
+        method. This number can be anything less than or equal to the number of samples fed to the Welch function, but the smaller the number, the worse the 
+        precision. You would imagine that specifiying an output of 256 samples would lead to such a gross approximation of the signal, yet the results below 
+        are interesting. 
+    </p>
+    <img src="../../../assets/welch_vs_fft.png" alt="Welch vs FFT Graph">
+    <p>
+        <i class="caption">Welch's Method displays a very good approximation while using much less memory</i>
+    </p>
+    <p>
+        The approximation is still really similar to the FFT, while using significantly less memory. With this drastic improvement in memory, I knew I took 
+        a step in the right direction. There are of course trade offs with this method which involves in the loss of precision. This loss of precision was 
+        nothing too drastic. The bandwidth, amplitude could still be determined to a good degree. The only disadvantage this introduced was 
+        being able to determine the modulation type of a signal. At an extremely high level, modulation is how a signal is encoded so that a receiver on 
+        the other end is able to decode the signal and interpret the information sent as long as they are aware of the modulation type used. 
+        As nice as this would have been to determine, it was out of my scope for the summer and would have most definitely required more memory usage. 
+    </p>
+    <p>
+        After testing Welch's method on random signals using a signal generator and some radios I had on hand (including a frequency hopping radio whose
+        results I'll share later), I created a structure for recording signals that wouldn't burden the memory on the SDR prototype. In terms of RAM, I was 
+        able to hold minutes worth of signal iq data without consuming all the RAM on the SDR. In terms of storage, I was able to store hundreds of binary 
+        files containing hours worth of iq data, while not even being close to using up half a gigabyte of device storage. This was the strucuture that I 
+        devised. 
+    </p>
+    <p>
+        By approximating signals, I was able to hold minutes worth of iq data into an array. And while my script was highly configurable, I chose to only hold 50 seconds 
+        of data at once. This array that held iq data essentially acted as a buffer that would then be flushed and refilled every 50 seconds.
+        After 50 seconds was recorded, I converted the samples to the frequency domain. The only samples I considered relevant were those above a base threshold that was 
+        set in decibals. If samples were above this threshold, then I would keep them, otherwise I would discard them since I assumed they were samples 
+        representing the noise floor. This base threshold was set closely above the noise floor used to save storage memory because the ultimate goal was 
+        to identify and characterize signals, not random noise. On top of saving the samples I considered relevant, I also saved the indices of where those samples were in
+        the buffer. Once I had my samples of relevant data and their indices, they were saved 
+        as binary files, and the array of samples could then be discarded so that then next set of samples could be collected for the subsequent 50 seconds. 
+    </p>
+    <p>
+        Even though countless amount of iq data representing the noise floor was discarded, it didn't mean any relevant data was being lost. In order to make it 
+        possible to recreate the activity that was recorded, at the end of the script, I would save a text file that held the configurations of the device when the 
+        script first ran. On every run of this Python script, a lot of parameters were configurable such as the frequencies to look at, the sample rate and 
+        amount of bandwidth to analyze. How precise Welch's method should approximate signals, and how much time this script should run for. Once the script begain 
+        running though, those parameters were then saved to this text file. By knowing the set up of the SDR, I was able to rebuild the buffer that was used to 
+        hold the samples, and map the indices of the buffer to a frequency and time (this buffer was two dimensional where the x indices were frequencies in MHz, and 
+        the y indices were seconds in 100 ms intervals). I could then load one iq data file and their indices files from the device storage, and map them to this buffer. 
+        Every sample that wasn't mapped into the buffer was assumed to be the noise floor since those were the only samples that were never saved. Once I recreated this one 
+        buffer, I would seek out every signal in this buffer and start describing them. After analzying one buffer worth of data, I then reset the buffer, and loaded 
+        a new set of iq data and index files. This would repeat until every set had been analzyed.
+    </p>
+    <p>
+        The amount of memory being saved was incredible. There is a notebook in my <strong>PlutoSDR</strong> github page that is called <i>iq_collection.ipynb</i> which 
+        explains my process thoroughly in code. This notebook can be used to collect samples using an ADALM Pluto SDR Learning Device, but if you do not have one on 
+        hand, there is also a portion of code that generates fake signal activity in place of live iq data. With the standard configuration I set up with the fake 
+        signal generator, the iq sample data using an FFT used up 2,048,000 bytes, or 2 MB. In comparison, the signal saved as binary data using the method I described above as 
+        well as a text file describing the configurations of the fake signal only used 30,219 bytes. That's only 0.03 MB. This may seem like nothing, but once again, keep in 
+        mind that this was only for a duration of 50 seconds, but this number can quickly spike over the course of hours.
+    </p>
+    <img src="../../../assets/iq_collection_memory_usage.png" alt="Memory usage results from standard FFT and Welch">
+    <p>
+        <i class="caption">Memory usage results</i>
+    </p>
+    <p>
+        If you wish to play around with the fake signal generator or want to use your own Pluto SDR alongside the script, there are instructions on how to do so in the 
+        notebook as well. 
+    </p>
+    <p id="resources" #resources>
+        <strong><u>Useful Resources</u></strong>
+    </p>
+    <p>
+        Throughout this article I've explained and linked some resources throughout that helped me a lot during my project, but I'd like to describe them in more detail for 
+        any wanting to get into digital signal processing or need clarification on some concepts.
+    </p>
+
+
+    </div>
+    <div class="right-space">
+    </div>
+</div>
+<!-- <div class="toFooter"></div> -->

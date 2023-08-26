@@ -58,13 +58,9 @@
       <p>Hello World!</p>
     </div>
     <div class="home-description-main" [ngsReveal]="{ reset: true, delay: 200, origin: 'left', distance: '500px'}">
-      <p class="main-text">I am currently studying computer engineering at the University of Illinois. My focus is on embedded systems and I hope to become an embedded software engineer in the future. As of now I am exploring different technologies as I progress through my educational career.  I have full stack development skills which I’ve gained from Motorola Solutions, and have developed this website in Angular to enhance those skills further.  I have also focused a lot of my time on digitial signal processing and have helped create a  “Learning Node” for a radio device for Motorola Solutions. A description of my projects and educational experiences can be found below. 
+      <p class="main-text">I am a recent undergraduate in Computer Engineering at the University of Illinois at Urbana-Champaign, and now pursuing a Master of Science. My focus is in the realm of autonomous systems, but I still enjoy learning many difference facets of computer engineering. Throughout my undergraduate career, I took the opportunity to explore and learn many different areas such as embedded systems, signal processing, parallel computing, machine learning, and more. My goal is to continue expanding and refining the breadth of my knowledge and one day help a generation of software engineers tackle the many challenges that we face today. 
       </p>
-      <p class="main-text">My motivation for putting this website together is to refine my front end development skills as 
-        well as bring forth to everyone an in depth portfolio describing who I am and what I have
-        accomplished in college. It also serves as a creative outlet to share my experiences and
-        introduce projects that others will hopefully find interesting and even helpful on their
-        programming endeavors.
+      <p class="main-text">My motivation for putting this website together was to cultivate my front-end development skills as well as bring forth a personalized portfolio describing who I am and what I have accomplished through my academic career. It also serves as a creative outlet to share my experiences and introduce projects that others will hopefully find interesting and even helpful on their learning endeavors. 
       </p>
       <p class="star-text">*This background image is actually a view I had from my sophomore year in the ISR dorms on
         campus. It was relaxing working at my desk and watching the sunset every night :-)
@@ -248,6 +244,23 @@
   </div>
 
   <img src="../../assets/motologo.png">
+  <div class="timeline_entry florida_timeline">
+    <h2>Motorola Solutions -- Software Engineer</h2>
+    <h3>Summer 2023</h3>
+    <p>
+      Created a platform-agnostic desktop application in Electron to display the tasks of a dump file retrieved from Motorola APX Next radios. 
+    </p>
+    <p>
+      Deployment of the application allowed it to replace its outdated succesor written in Perl which saved the licensing expenses for its Enterprise edition.
+    </p>
+    <span (click)="readMore(floridamore)" class="readmore" id="floridamoreTag" #floridamoreTag>Read more</span>
+    <p id="floridamore" #floridamore>
+      Here I was able to explore a Electron and learn to use it for the first time. With my prior knowledge in Angular, it was a very small learning curve that allowed me to 
+      quickly begin to piece together the application. By the end, the application was identical to its predecessor and very responsive.
+    </p>
+    <span (click)="readMore(floridamore)" class="readless" id="floridalessTag" #floridalessTag>Read Less</span>
+  </div>
+
   <div class="timeline_entry embedded_timeline">
     <h2>Motorola Solutions -- Embedded Systems Engineer</h2>
     <h3>Summer 2022</h3>
@@ -268,6 +281,7 @@
     </p>
     <span (click)="readMore(embeddedmore)" class="readless" id="embeddedlessTag" #embeddedlessTag>Read Less</span>
   </div>
+
   <div class="timeline_entry fullstack_timeline">
     <h2>Motorola Solutions -- Full Stack Developer</h2>
     <h3>Spring 2022</h3>
@@ -287,8 +301,9 @@
     </p>
     <span (click)="readMore(fullstackmore)" class="readless" id="fullstacklessTag" #fullstacklessTag>Read Less</span>
   </div>
+
   <div class="timeline_entry backend_timeline">
-    <h2>Motorola Solutions -- Backend Developr</h2>
+    <h2>Motorola Solutions -- Backend Developer</h2>
     <h3>Summer 2021</h3>
     <p>
       Improved the backend database of the Application Status Portal project using MySQL.
@@ -318,6 +333,61 @@
   <div class="timeline-title" style="margin-bottom: 100px;">
     <p>My Courses Timeline</p>
   </div>
+
+  <div class="timeline_entry se423_entry">
+      <h2>Mechatronics (SE 423)</h2>
+      <h3>Spring 2023</h3>
+      <p>
+        The core of this class is to teach the computer interfacing of physical devices, data acquisition, real time programming, and human-machine interfaces. In addition to lecture, 
+        the course offered a semester project which focused on a robot equipped with a variety of sensors (MPU, camera, ladar, IMU, OptiTrack motion capture system), and a servo motor based cage 
+        with a goal of navigating an obstacle course to retrieve golf balls. The final project for my group was a success and provided a great hands-on experience learning experience. More 
+        information about our project can be found online at this <a href="https://www.hackster.io/ben-hoyer/se-423-group-8-final-project-974d93?auth_token=ef59266ffb93cd6669952b7593e2b013">website link</a>. 
+      </p>
+    
+  </div>
+
+  <div class="timeline-entry ece486_entry">
+    <h2>Control Systems (ECE 486)</h2>
+    <h3>Spring 2023</h3>
+    <p>
+      This course covers the design, modelling, and analysis of control systems with modern design principes. The laboratory focused on modeling and creating a controller to balance 
+      a pendulum by designing a PID controller that sent the appropiate current to a rotor attached to the end of the pendulum. 
+    </p>
+  </div>
+
+  <div class="timeline_entry ece420_entry">
+    <h2>Embedded DSP Labratory</h2>
+    <h3>Spring 2023</h3>
+    <p>
+      A labroratory class with a focus on developing real-time digital signal processing systems on an Android tablet. Topics ranged from audio-sampling, FIR/IIR filters, 
+      digital modulation for communications, and processing of audio, image, and video signals. The final project gave the liberty to students to apply any topic from the 
+      class or from a research paper onto the Android tablet. 
+      <span (click)="readMore(ece420more)" class="readmore" id="ece420moreTag" #ece420moreTag>Read More</span>
+    </p>
+    <p id="ece420more" #ece420more>
+      Besides solidfying my expertise with digital signal processing, this class allowed me to explore algorithms from a real-time perspective and served as a venue to apply 
+      a personal project that I had begun before the start of the semester. I devised a spoken digit recognition model that was trained offline and run on the Android tablet. More 
+      information about this project can be found below in the projects section. 
+    </p>
+    <span (click)="readMore(ece420more)" class="readless" id="ece420lessTag" #ece420lessTag>Read Less</span>
+  </div>
+
+  <div class="timeline_entry cs431_entry">
+    <h2>Embedded Systems (CS 431)</h2>
+    <h3>Spring 2023</h3>
+    <p>
+      The course focus is into embedded architecture and the key concepts found in common embedded system applications. Divided into a lecture and lab component, the lectures focused on 
+      core concepts such as signal processing and control, time critical I/O handling, data communication, real time operating systems, and more. The lab component provided the opportunity to program 
+      a biped robot so that it could it balance itself whilst simultaneously follow a set of waypoints. 
+      <span (click)="readMore(cs431more)" class="readmore" id="cs431moreTag" #cs431moreTag>Read More</span>
+    </p>
+    <p id="cs431more" #cs431more>
+      This class was a ground basis for learning more into embedded architecture and programming for micro controllers. The microcontroller onboard the biped robot was as ESP32-Wrover. The final project entailed tagging on additional features on top of the aforementioned lab goals. 
+      In my case, I created an Android application using MIT App Inventor that could communicate with the robot via Bluetooth to send commands and receive data points in order to create a local trajectory map of the robot. 
+    </p>
+    <span (click)="readMore(cs431more)" class="readless" id="cs431lessTag" #cs431lessTag>Read Less</span>
+  </div>
+
   <div class="timeline_entry ece484_entry">
     <h2>Principles of Safe Autonomy (ECE 484)</h2>
     <h3>Fall 2022</h3>
@@ -331,6 +401,7 @@
     </p>
     <span (click)="readMore(ece484more)" class="readless" id="ece484lessTag" #ece484lessTag>Read Less</span>
   </div>
+
   <div class="timeline_entry ece408_entry">
     <h2>Applied Parallel Programming (ECE 408)</h2>
     <h3>Fall 2022</h3>
@@ -681,6 +752,14 @@
 
           <img src="../../assets/pluto_inperson.jpg" alt="In person ADALM-PLUTO">
 
+        </div>
+
+        <div class="project-two" *ngIf="curr_project == 1">
+          <div class="project-two-content" style="grid-column: 1 / span 3;">
+            <p>
+              Test for ece 420 project.
+            </p>
+          </div>
         </div>
 
         <div class="coming_soon" *ngIf="curr_project == project_names.length - 1">

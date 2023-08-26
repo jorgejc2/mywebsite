@@ -110,8 +110,8 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
 
   timeline_box_selection: number = 0;
 
-  project_names: string[] = ["Digital Signal Processing", "Coming Soon !!"];
-  project_paths: string[] = ["/dsp", "/"]
+  project_names: string[] = ["Digital Signal Processing", "ECE 420: Spoken Digit Recognition", "Coming Soon !!"];
+  project_paths: string[] = ["/dsp","ece420finalproject", "/"]
   curr_project: number = 0; // used to select the project to be displayed in the 'project-content-info' div
 
   gallery_items: GalleryItem[] = [
@@ -315,7 +315,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
     this.displayGallery = true;
   }
 
-  courseInfoToggle = [false, false, false, false, false, false, false, false, false, false, false, false, false];
+  courseInfoToggle = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
 
   readMore(el: any) {
     switch (el.id)  {
@@ -448,11 +448,29 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
         break;
       }
+      case 'floridamore': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('floridalessTag');
+        var idx = 7;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
       case 'embeddedmore': {
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('embeddedlessTag');
-        var idx = 7;
+        var idx = 8;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
@@ -470,7 +488,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('fullstacklessTag');
-        var idx = 8;
+        var idx = 9;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
@@ -488,7 +506,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('backendlessTag');
-        var idx = 9;
+        var idx = 10;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
@@ -506,7 +524,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('vexlessTag');
-        var idx = 10;
+        var idx = 11;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
@@ -524,7 +542,7 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('shpelessTag');
-        var idx = 11;
+        var idx = 12;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
@@ -542,7 +560,43 @@ export class DashboardHomeMainDescriptionComponent implements OnInit, AfterViewI
         var moreText = document.getElementById(el.id);
         var moreTag = document.getElementById(`${el.id}Tag`);
         var lessTag =document.getElementById('solarlessTag');
-        var idx = 12;
+        var idx = 13;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'ece420more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('ece420lessTag');
+        var idx = 14;
+        if (this.courseInfoToggle[idx]) {
+          moreText.style.display = "none";
+          moreTag.style.display = "inline";
+          lessTag.style.display = "none";
+        }
+        else {
+          moreText.style.display = "inline";
+          moreTag.style.display = "none";
+          lessTag.style.display = "inline";
+        }
+        this.courseInfoToggle[idx] = !this.courseInfoToggle[idx]
+        break;
+      }
+      case 'cs431more': {
+        var moreText = document.getElementById(el.id);
+        var moreTag = document.getElementById(`${el.id}Tag`);
+        var lessTag =document.getElementById('cs431lessTag');
+        var idx = 15;
         if (this.courseInfoToggle[idx]) {
           moreText.style.display = "none";
           moreTag.style.display = "inline";
