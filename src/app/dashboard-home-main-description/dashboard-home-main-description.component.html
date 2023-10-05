@@ -58,10 +58,11 @@
       <p>Hello World!</p>
     </div>
     <div class="home-description-main" [ngsReveal]="{ reset: true, delay: 200, origin: 'left', distance: '500px'}">
-      <p class="main-text">I am a recent undergraduate in Computer Engineering at the University of Illinois at Urbana-Champaign, and now pursuing a Master of Science. My focus is in the realm of autonomous systems, but I still enjoy learning many difference facets of computer engineering. Throughout my undergraduate career, I took the opportunity to explore and learn many different areas such as embedded systems, signal processing, parallel computing, machine learning, and more. My goal is to continue expanding and refining the breadth of my knowledge and one day help a generation of software engineers tackle the many challenges that we face today. 
+      <p class="main-text">
+        I am a recent undergraduate in Computer Engineering at the University of Illinois at Urbana-Champaign, now pursuing a Master of Science. With a strong background in embedded systems, digital signal processing, and control systems, my goal is to further explore how to utilize computer vision and sensors to better aid autonomous agents in making logical reasons. I also have experience in other areas including machine learning, distributed systems, and full-stack development. 
       </p>
-      <p class="main-text">My motivation for putting this website together was to cultivate my front-end development skills as well as bring forth a personalized portfolio describing who I am and what I have accomplished through my academic career. It also serves as a creative outlet to share my experiences and introduce projects that others will hopefully find interesting and even helpful on their learning endeavors. 
-      </p>
+      <p class="main-text">
+        My motivation for putting this website together was to cultivate my front-end development skills as well as bring forth a personalized portfolio describing who I am and what I have accomplished throughout my academic career. It also serves as a creative outlet to share my experiences and introduce projects that others will hopefully find interesting and even helpful for their own learning endeavors. As I continue with my educational journey, I hope to expand this portfolio and eventually be a part of a generation of engineers that tackles the many difficult challenges that we face today.       </p>
       <p class="star-text">*This background image is actually a view I had from my sophomore year in the ISR dorms on
         campus. It was relaxing working at my desk and watching the sunset every night :-)
       </p> 
@@ -346,7 +347,7 @@
     
   </div>
 
-  <div class="timeline-entry ece486_entry">
+  <div class="timeline_entry ece486_entry">
     <h2>Control Systems (ECE 486)</h2>
     <h3>Spring 2023</h3>
     <p>
@@ -356,7 +357,7 @@
   </div>
 
   <div class="timeline_entry ece420_entry">
-    <h2>Embedded DSP Labratory</h2>
+    <h2>Embedded DSP Labratory (ECE 420)</h2>
     <h3>Spring 2023</h3>
     <p>
       A labroratory class with a focus on developing real-time digital signal processing systems on an Android tablet. Topics ranged from audio-sampling, FIR/IIR filters, 
@@ -800,81 +801,3 @@
     </div>
   </div>
 </div>
-
-<div class="gallery" id="targetGallery">
-  <div class="gallery_bck"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="gallery-photo-info-card" *ngIf="currGalleryItem != undefined">
-    <div class="gallery-photo-info">
-      <svg xmlns="http://www.w3.org/2000/svg" (click)="exitImgDetails()"
-      width="100px" height="100px"
-      viewBox="0 0 875 875">
-      <path id="Selection" 
-          fill="none" stroke="black" stroke-width="1"
-          d="M 255.00,277.00
-          C 255.00,277.00 286.00,308.00 286.00,308.00
-              286.00,308.00 304.00,326.00 304.00,326.00
-              307.91,329.91 319.58,340.60 321.26,345.00
-              323.91,351.93 320.83,359.77 313.00,360.77
-              303.98,361.93 293.96,348.96 288.00,343.00
-              288.00,343.00 235.00,290.00 235.00,290.00
-              228.83,283.83 217.03,275.17 217.03,266.00
-              217.03,263.86 217.20,261.94 218.17,260.00
-              220.05,256.26 232.29,244.71 236.00,241.00
-              236.00,241.00 284.00,193.00 284.00,193.00
-              288.76,188.24 301.70,174.15 307.00,172.01
-              316.03,168.36 325.04,175.55 322.19,185.00
-              320.36,191.10 308.84,201.16 304.00,206.00
-              304.00,206.00 286.00,224.00 286.00,224.00
-              286.00,224.00 255.00,255.00 255.00,255.00
-              255.00,255.00 469.00,255.00 469.00,255.00
-              488.33,255.00 524.56,253.90 542.00,256.43
-              564.56,259.70 585.68,268.66 604.00,282.16
-              675.73,334.98 676.17,444.52 607.00,499.55
-              595.65,508.58 581.74,516.32 568.00,521.00
-              555.44,525.27 540.29,528.84 527.00,529.00
-              475.81,529.60 427.34,506.18 402.31,460.00
-              390.54,438.29 384.87,418.73 385.00,394.00
-              385.04,386.21 387.82,380.05 397.00,381.23
-              403.94,382.11 405.89,386.81 406.71,393.00
-              406.71,393.00 407.29,405.00 407.29,405.00
-              408.84,417.66 413.39,432.72 419.32,444.00
-              440.08,483.47 480.59,507.52 525.00,507.00
-              538.20,506.84 557.17,502.06 569.00,496.24
-              585.27,488.25 598.95,478.13 610.54,464.00
-              654.28,410.65 640.39,332.70 583.00,295.34
-              566.27,284.45 543.03,277.03 523.00,277.00
-              523.00,277.00 504.00,277.00 504.00,277.00
-              504.00,277.00 467.00,277.00 467.00,277.00
-              467.00,277.00 255.00,277.00 255.00,277.00 Z" fill="#000"/>
-      </svg>
-      <img *ngIf="currGalleryItem != undefined" [src]="currGalleryItem.url" [alt]="currGalleryItem.alt">
-      <p *ngIf="currGalleryItem != undefined">
-        {{ currGalleryItem.description }}
-      </p>
-    </div>
-  </div>
-  <h1>Photo Gallery</h1>
-  <div class="gallery-description" *ngIf="!displayGallery">
-    <p>
-      Here's a fun section that I decided to add to display all the memories and friends I've made throughout my college career. 
-      My goal is to one day get into photography and buy a professional camera, but in the mean time I'm sticking to taking pictures 
-      of the moments around me and sunsets !!
-    </p>
-    <div id="showGallery" (click)="showGallery()">
-      <p>
-        Show Gallery
-      </p>
-    </div>
-  </div>
-  <div class="gallery-content" *ngIf="displayGallery">
-    <div *ngFor="let gallery_item of gallery_items; let idx=index" [style]="gallery_item.image ? '' : gallery_item.style" (click)="imgDetails(idx)">
-      <img *ngIf="gallery_item.image" [src]="gallery_item.url" [alt]="gallery_item.alt" [style]="gallery_item.style">
-    </div>
-  </div>
-</div>
-
-<!-- <div class="toFooter"></div> -->
